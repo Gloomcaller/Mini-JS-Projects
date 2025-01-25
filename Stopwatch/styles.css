@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #556A6F;
+    background-image: url("./media/stopwatch-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#myH1 {
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 50px;
+    padding: 20px;
+    background-color: wheat;
+}
+
+#display {
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 2px gray;
+    margin-bottom: 30px;
+}
+
+#controls button {
+    font-size: larger;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 125px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+#startBtn {
+    background-color: green;
+}
+
+#startBtn:hover {
+    background-color: darkgreen;
+}
+
+#stopBtn {
+    background-color: red;
+}
+
+#stopBtn:hover {
+    background-color: darkred;
+}
+
+#resetBtn {
+    background-color: orange;
+}
+
+#resetBtn:hover {
+    background-color: darkorange;
+}
+
+@media (max-width: 600px) {
+    #myH1 {
+        font-size: large;
+    }
+
+    #display {
+        font-size: large;
+    }
+
+    #controls button {
+        font-size: medium;
+        padding: 8px 15px;
+        min-width: 100px;
+    }
+
+    #container {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #myH1 {
+        font-size: xxx-large;
+    }
+
+    #display {
+        font-size: xxx-large;
+    }
+
+    #controls button {
+        font-size: x-large;
+        padding: 12px 25px;
+        min-width: 150px;
+    }
+
+    #container {
+        padding: 30px;
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Time Calculator</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Time Calculator</h1>
+        <div id="time-display">00:00:00</div>
+        <div id="time-breakdown">0 minutes, 0 seconds</div>
+        <div id="controls">
+            <input type="number" id="hours" placeholder="Hours" min="0">
+            <input type="number" id="minutes" placeholder="Minutes" min="0" max="59">
+            <input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
+            <button id="add-time">Add Time</button>
+            <button id="subtract-time">Subtract Time</button>
+            <button id="reset">Reset</button>
+            <div>
+                <input type="number" id="max-time" placeholder="Set Max Hours (default: 99)" min="1">
+                <button id="set-max">Set Max</button>
+            </div>
+        </div>
+        <div id="error-message"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

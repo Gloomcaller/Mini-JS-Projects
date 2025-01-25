@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #556A6F;
+    background-image: url(./media/time-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+#container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+#time-display {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 15px 0;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+#controls input {
+    width: 80px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
+#controls button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: orange;
+    transition: background-color 0.3s;
+}
+
+#controls button:hover {
+    background-color: darkorange;
+}
+
+#error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    height: 1rem;
+}
+
+@media (max-width: 600px) {
+    #controls input {
+        width: 60px;
+    }
+}
