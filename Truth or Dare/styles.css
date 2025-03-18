@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #121212;
+    color: white;
+}
+
+#home,
+#game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.mode-btn,
+.truth-btn,
+.dare-btn,
+.home-btn {
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    font-size: x-large;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.mode-btn {
+    background-color: #333;
+    color: white;
+}
+
+.mode-btn:hover {
+    background-color: #555;
+}
+
+.truth-btn {
+    background-color: skyblue;
+    color: white;
+}
+
+.dare-btn {
+    background-color: orange;
+    color: white;
+}
+
+.home-btn {
+    background-color: gray;
+    color: white;
+}
