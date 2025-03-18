@@ -2,8 +2,12 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #121212;
     color: white;
+    background-image: url(./media/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #home,
@@ -13,10 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.hidden {
-    display: none;
+    background-color: rgba(18, 18, 18, 0.7);
 }
 
 h1 {
@@ -25,7 +26,12 @@ h1 {
     cursor: pointer;
 }
 
-h1:hover {
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 a:hover {
     color: lightgray;
 }
 
@@ -37,8 +43,7 @@ h1:hover {
 
 .mode-btn,
 .truth-btn,
-.dare-btn,
-.home-btn {
+.dare-btn {
     padding: 15px 30px;
     margin: 10px;
     border: none;
@@ -46,6 +51,8 @@ h1:hover {
     cursor: pointer;
     border-radius: 10px;
     transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .mode-btn {
@@ -59,11 +66,11 @@ h1:hover {
     background-color: #555;
 }
 
-.mode-btn:nth-child(2):hover {
+.mode-btn:nth-child(3):hover {
     background-color: skyblue;
 }
 
-.mode-btn:nth-child(3):hover {
+.mode-btn:nth-child(4):hover {
     background-color: orange;
 }
 
@@ -98,12 +105,6 @@ h1:hover {
 .buttons {
     display: flex;
     gap: 20px;
-}
-
-.home-btn {
-    background-color: gray;
-    color: white;
-    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
