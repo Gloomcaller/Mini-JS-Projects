@@ -90,6 +90,13 @@ h1 a:hover {
     color: white;
 }
 
+.truth-btn,
+.dare-btn {
+    flex: 1;
+    min-width: 100px;
+    max-width: 200px;
+}
+
 #prompt-box {
     width: 80%;
     max-width: 600px;
@@ -104,7 +111,8 @@ h1 a:hover {
 
 .buttons {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
