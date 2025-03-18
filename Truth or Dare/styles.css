@@ -19,6 +19,22 @@ body {
     display: none;
 }
 
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+h1:hover {
+    color: lightgray;
+}
+
+#subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: gray;
+}
+
 .mode-btn,
 .truth-btn,
 .dare-btn,
@@ -35,10 +51,26 @@ body {
 .mode-btn {
     background-color: #333;
     color: white;
+    width: 200px;
+    border: 3px solid white;
 }
 
 .mode-btn:hover {
     background-color: #555;
+}
+
+.mode-btn:nth-child(2):hover {
+    background-color: skyblue;
+}
+
+.mode-btn:nth-child(3):hover {
+    background-color: orange;
+}
+
+#mode-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .truth-btn {
@@ -51,7 +83,43 @@ body {
     color: white;
 }
 
+#prompt-box {
+    width: 80%;
+    max-width: 600px;
+    min-height: 150px;
+    padding: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
 .home-btn {
     background-color: gray;
     color: white;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .mode-btn {
+        width: 150px;
+    }
+
+    #prompt-box {
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
 }
