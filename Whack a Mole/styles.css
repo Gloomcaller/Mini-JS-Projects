@@ -1,0 +1,104 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.score-container,
+.time-container {
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+    width: 606px;
+    height: 606px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border: 3px solid #2c3e50;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #4a6b57;
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    border: 1px solid #2c3e50;
+    box-sizing: border-box;
+    cursor: url('media/hammer.png'), pointer;
+    transition: transform 0.1s;
+}
+
+.square:active {
+    transform: scale(0.95);
+}
+
+.mole {
+    background-image: url("media/mole.png");
+    background-size: cover;
+    cursor: url('media/hammer.png'), pointer;
+}
+
+#game-over {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e8f4f8;
+    border-radius: 8px;
+    border: 2px solid #e74c3c;
+    animation: fadeIn 0.5s ease-in;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
