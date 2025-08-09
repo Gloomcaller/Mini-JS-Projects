@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    background: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.score-board div {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.score-board span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+h2 {
+    margin: 15px 0;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+#computer-choice,
+#user-choice,
+#result {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+#result {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    min-height: 30px;
+}
+
+.choices {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#rock {
+    background-color: #e74c3c;
+}
+
+#rock:hover {
+    background-color: #c0392b;
+}
+
+#paper {
+    background-color: #2ecc71;
+}
+
+#paper:hover {
+    background-color: #27ae60;
+}
+
+#scissors {
+    background-color: #f39c12;
+}
+
+#scissors:hover {
+    background-color: #d35400;
+}
