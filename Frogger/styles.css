@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h3 {
+    margin: 5px 0;
+    font-weight: normal;
+}
+
+#start-pause-button {
+    padding: 8px 16px;
+    margin: 10px 0 20px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #00aaff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#start-pause-button:hover {
+    background-color: #0088cc;
+}
+
+.grid {
+    border: 2px solid #444;
+    background-color: #333;
+    height: 180px;
+    width: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.grid div {
+    height: 20px;
+    width: 20px;
+    transition: background-color 0.15s ease;
+}
+
+.ending-block {
+    background-color: crimson;
+}
+
+.starting-block {
+    background-color: royalblue;
+}
+
+.frog {
+    background-color: limegreen !important;
+    border-radius: 4px;
+}
+
+.l1,
+.l2,
+.l3 {
+    background-color: saddlebrown;
+}
+
+.l4,
+.l5 {
+    background-color: lightblue;
+}
+
+.c1 {
+    background-color: black;
+}
+
+.c2,
+.c3 {
+    background-color: silver;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#start-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#start-button:hover {
+    background-color: #3e8e41;
+}
+
+#pause-button {
+    background-color: #f44336;
+    color: white;
+}
+
+#pause-button:hover {
+    background-color: #c62828;
+}
