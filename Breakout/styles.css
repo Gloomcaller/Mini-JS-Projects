@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ff5722;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.score-display {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #4caf50;
+}
+
+.game-board {
+    position: relative;
+    width: 560px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.user {
+    position: absolute;
+    width: 100px;
+    height: 15px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    bottom: 10px;
+    left: 230px;
+    transition: left 0.1s ease-out;
+}
+
+.block {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff5722;
+    box-shadow: 0 0 5px #ff9800;
+}
+
+.game-controls {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #303f9f;
+    transform: translateY(-2px);
+}
+
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #ff5722;
+    z-index: 10;
+    text-align: center;
+}
+
+.game-message h2 {
+    color: #ff5722;
+    margin-top: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .game-board {
+        width: 100%;
+        height: 250px;
+    }
+
+    .user {
+        width: 80px;
+        height: 12px;
+    }
+
+    .block {
+        width: calc(20% - 4px);
+        height: 15px;
+    }
+}
