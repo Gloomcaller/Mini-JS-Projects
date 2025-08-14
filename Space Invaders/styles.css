@@ -1,0 +1,63 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.results {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.grid {
+    width: 600px;
+    height: 600px;
+    border: solid 3px white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    background-color: #111;
+}
+
+.grid div {
+    width: 40px;
+    height: 40px;
+}
+
+.invader {
+    background-color: purple;
+    border-radius: 8px;
+    box-shadow: 0 0 10px magenta;
+}
+
+.shooter {
+    background-color: limegreen;
+    box-shadow: 0 0 10px greenyellow;
+}
+
+.laser {
+    background-color: orange;
+    box-shadow: 0 0 5px gold;
+}
+
+.boom {
+    background-color: red;
+    box-shadow: 0 0 10px orange;
+}
+
+#resetBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#resetBtn:hover {
+    background-color: #666;
+}
