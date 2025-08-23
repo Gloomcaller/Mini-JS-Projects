@@ -3,38 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tarot Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <title>Tarot Reader</title>
 </head>
 
 <body>
     <div class="container">
         <h1>Tarot Reader</h1>
-        <form id="nameForm">
-            <label for="username">Enter your name:</label>
-            <input type="text" id="username" required>
-            <button type="submit">Begin Reading</button>
-        </form>
+
+        <div id="intro">
+            <p>Discover what the cards have in store for you.</p>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Enter your name" required>
+            </div>
+            <button id="startBtn">Begin Reading</button>
+        </div>
 
         <div id="readingSection" class="hidden">
             <p id="greeting"></p>
-            <button id="drawBtn">Draw 3 Cards</button>
-            <div id="spread">
-                <div class="slot">
-                    <h2>Love</h2>
-                    <div class="card-slot"></div>
-                </div>
-                <div class="slot">
-                    <h2>Career</h2>
-                    <div class="card-slot"></div>
-                </div>
-                <div class="slot">
-                    <h2>Future</h2>
-                    <div class="card-slot"></div>
+
+            <div class="form-group">
+                <label>Select spread type:</label>
+                <div>
+                    <button class="spread-type" data-cards="3">3-Card Spread</button>
+                    <button class="spread-type" data-cards="5">5-Card Spread</button>
                 </div>
             </div>
+
+            <button id="drawBtn">Draw Cards</button>
+
+            <div id="spread" class="hidden"></div>
+
+            <div id="interpretation" class="hidden">
+                <h3>Your Reading Interpretation</h3>
+                <p id="readingText"></p>
+            </div>
+
+            <div id="history" class="hidden">
+                <h3>Reading History</h3>
+                <div id="historyList"></div>
+            </div>
+
+            <button id="resetBtn" class="hidden">New Reading</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 

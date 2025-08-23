@@ -1,72 +1,217 @@
 const tarotDeck = [
-    { name: "The Fool", meaning: "New beginnings, spontaneity", type: "good", img: "fool.jpg" },
-    { name: "The Magician", meaning: "Power, resourcefulness", type: "good", img: "magician.jpg" },
-    { name: "The High Priestess", meaning: "Intuition, mystery", type: "neutral", img: "high_priestess.jpg" },
-    { name: "The Empress", meaning: "Nature, nurture, abundance", type: "good", img: "empress.jpg" },
-    { name: "The Emperor", meaning: "Authority, structure", type: "neutral", img: "emperor.jpg" },
-    { name: "The Lovers", meaning: "Love, harmony", type: "good", img: "lovers.jpg" },
-    { name: "The Chariot", meaning: "Control, determination", type: "neutral", img: "chariot.jpg" },
-    { name: "Strength", meaning: "Courage, influence", type: "good", img: "strength.jpg" },
-    { name: "The Hermit", meaning: "Reflection, solitude", type: "neutral", img: "hermit.jpg" },
-    { name: "Death", meaning: "Endings, transformation", type: "bad", img: "death.jpg" },
-    { name: "The Tower", meaning: "Chaos, upheaval", type: "bad", img: "tower.jpg" },
-    { name: "The Star", meaning: "Hope, inspiration", type: "good", img: "star.jpg" },
-    { name: "The Moon", meaning: "Illusion, fear", type: "bad", img: "moon.jpg" },
-    { name: "The Sun", meaning: "Joy, success", type: "good", img: "sun.jpg" },
-    { name: "Judgement", meaning: "Reflection, reckoning", type: "neutral", img: "judgement.jpg" },
-    { name: "The World", meaning: "Completion, achievement", type: "good", img: "world.jpg" }
+    { name: "The Fool", meaning: "New beginnings, spontaneity", type: "good", img: "./media/00-TheFool.png" },
+    { name: "The Magician", meaning: "Power, resourcefulness", type: "good", img: "./media/01-TheMagician.png" },
+    { name: "The High Priestess", meaning: "Intuition, mystery", type: "neutral", img: "./media/02-TheHighPriestess.png" },
+    { name: "The Empress", meaning: "Nature, nurture, abundance", type: "good", img: "./media/03-TheEmpress.png" },
+    { name: "The Emperor", meaning: "Authority, structure", type: "neutral", img: "./media/04-TheEmperor.png" },
+    { name: "The Hierophant", meaning: "Tradition, conformity", type: "neutral", img: "./media/05-TheHierophant.png" },
+    { name: "The Lovers", meaning: "Love, harmony", type: "good", img: "./media/06-TheLovers.png" },
+    { name: "The Chariot", meaning: "Control, determination", type: "neutral", img: "./media/07-TheChariot.png" },
+    { name: "Strength", meaning: "Courage, influence", type: "good", img: "./media/08-Strength.png" },
+    { name: "The Hermit", meaning: "Reflection, solitude", type: "neutral", img: "./media/09-TheHermit.png" },
+    { name: "Wheel of Fortune", meaning: "Change, cycles", type: "neutral", img: "./media/10-WheelOfFortune.png" },
+    { name: "Justice", meaning: "Fairness, truth", type: "good", img: "./media/11-Justice.png" },
+    { name: "The Hanged Man", meaning: "Surrender, new perspective", type: "neutral", img: "./media/12-TheHangedMan.png" },
+    { name: "Death", meaning: "Endings, transformation", type: "bad", img: "./media/13-Death.png" },
+    { name: "Temperance", meaning: "Balance, moderation", type: "good", img: "./media/14-Temperance.png" },
+    { name: "The Devil", meaning: "Bondage, materialism", type: "bad", img: "./media/15-TheDevil.png" },
+    { name: "The Tower", meaning: "Chaos, upheaval", type: "bad", img: "./media/16-TheTower.png" },
+    { name: "The Star", meaning: "Hope, inspiration", type: "good", img: "./media/17-TheStar.png" },
+    { name: "The Moon", meaning: "Illusion, fear", type: "bad", img: "./media/18-TheMoon.png" },
+    { name: "The Sun", meaning: "Joy, success", type: "good", img: "./media/19-TheSun.png" },
+    { name: "Judgement", meaning: "Reflection, reckoning", type: "neutral", img: "./media/20-Judgement.png" },
+    { name: "The World", meaning: "Completion, achievement", type: "good", img: "./media/21-TheWorld.png" }
 ];
 
-const nameForm = document.getElementById("nameForm");
-const readingSection = document.getElementById("readingSection");
-const greeting = document.getElementById("greeting");
-const drawBtn = document.getElementById("drawBtn");
-const slots = document.querySelectorAll(".card-slot");
+const intro = document.getElementById('intro');
+const readingSection = document.getElementById('readingSection');
+const greeting = document.getElementById('greeting');
+const drawBtn = document.getElementById('drawBtn');
+const spread = document.getElementById('spread');
+const interpretation = document.getElementById('interpretation');
+const readingText = document.getElementById('readingText');
+const resetBtn = document.getElementById('resetBtn');
+const historySection = document.getElementById('history');
+const historyList = document.getElementById('historyList');
+
+let userName = '';
+let selectedSpread = 3;
+let readingHistory = [];
+
+function formatName(name) {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+}
 
 function drawCards(num) {
-    let deckCopy = [...tarotDeck];
-    let drawn = [];
+    let drawnCards = [];
+    let deckCopy = JSON.parse(JSON.stringify(tarotDeck));
+
     for (let i = 0; i < num; i++) {
-        let index = Math.floor(Math.random() * deckCopy.length);
-        drawn.push(deckCopy.splice(index, 1)[0]);
+        const randomIndex = Math.floor(Math.random() * deckCopy.length);
+        drawnCards.push(deckCopy[randomIndex]);
+        deckCopy.splice(randomIndex, 1);
     }
-    return drawn;
+
+    return drawnCards;
 }
 
-function createCard(card) {
-    let cardEl = document.createElement("div");
-    cardEl.classList.add("card", card.type);
+function createCardElement(card, position) {
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'card';
 
-    let imgEl = document.createElement("img");
-    imgEl.src = "images/" + card.img;
+    const imgEl = document.createElement('img');
+    imgEl.src = card.img;
     imgEl.alt = card.name;
+    imgEl.onerror = function () {
+        this.style.display = 'none';
+        const fallback = document.createElement('div');
+        fallback.style.width = '100%';
+        fallback.style.height = '100%';
+        fallback.style.display = 'flex';
+        fallback.style.justifyContent = 'center';
+        fallback.style.alignItems = 'center';
+        fallback.style.background = '#5c00a3';
+        fallback.style.color = 'white';
+        fallback.style.fontWeight = 'bold';
+        fallback.style.padding = '5px';
+        fallback.style.textAlign = 'center';
+        fallback.textContent = card.name;
+        cardDiv.appendChild(fallback);
+    };
 
-    let meaningEl = document.createElement("div");
-    meaningEl.classList.add("meaning");
+    const meaningEl = document.createElement('div');
+    meaningEl.classList.add('meaning');
     meaningEl.textContent = card.meaning;
 
-    cardEl.appendChild(imgEl);
-    cardEl.appendChild(meaningEl);
+    cardDiv.appendChild(imgEl);
+    cardDiv.appendChild(meaningEl);
 
-    return cardEl;
-}
-
-nameForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    let userName = document.getElementById("username").value.trim();
-    greeting.textContent = `Welcome, ${userName}. Your fate awaits...`;
-    nameForm.classList.add("hidden");
-    readingSection.classList.remove("hidden");
-});
-
-drawBtn.addEventListener("click", function () {
-    slots.forEach(slot => slot.innerHTML = "");
-    let drawnCards = drawCards(3);
-
-    drawnCards.forEach((card, index) => {
-        let cardEl = createCard(card);
-        slots[index].appendChild(cardEl);
+    cardDiv.addEventListener('click', () => {
+        showCardInterpretation(card, position);
     });
 
-    greeting.textContent = "A look in to the future...";
+    return cardDiv;
+}
+
+function showCardInterpretation(card, position) {
+    const positions = selectedSpread === 3 ?
+        ['Love', 'Career', 'Future'] :
+        ['Past', 'Present', 'Future', 'Advice', 'Outcome'];
+    readingText.innerHTML += `<p><strong>${positions[position]}:</strong> ${card.name} - ${card.meaning}</p>`;
+}
+
+function analyzeSpread(cards) {
+    const goodCount = cards.filter(card => card.type === 'good').length;
+    const badCount = cards.filter(card => card.type === 'bad').length;
+
+    if (goodCount > badCount) {
+        return "Overall, this reading suggests positive outcomes ahead.";
+    } else if (badCount > goodCount) {
+        return "This reading indicates some challenges ahead. Be prepared.";
+    } else {
+        return "This reading shows a balance of influences. Your choices will determine outcomes.";
+    }
+}
+
+function displaySpread(cards) {
+    spread.innerHTML = '';
+
+    const positions = selectedSpread === 3 ?
+        ['Love', 'Career', 'Future'] :
+        ['Past', 'Present', 'Future', 'Advice', 'Outcome'];
+
+    cards.forEach((card, index) => {
+        const slotDiv = document.createElement('div');
+        slotDiv.className = 'slot';
+
+        const title = document.createElement('h2');
+        title.textContent = positions[index];
+
+        const cardSlot = document.createElement('div');
+        cardSlot.className = 'card-slot';
+        cardSlot.appendChild(createCardElement(card, index));
+
+        slotDiv.appendChild(title);
+        slotDiv.appendChild(cardSlot);
+        spread.appendChild(slotDiv);
+    });
+
+    spread.classList.remove('hidden');
+
+    const overallAnalysis = analyzeSpread(cards);
+    readingText.innerHTML = `<p>${overallAnalysis}</p>`;
+    interpretation.classList.remove('hidden');
+
+    addToHistory(cards);
+}
+
+function addToHistory(cards) {
+    const cardNames = cards.map(card => card.name);
+    const historyEntry = {
+        date: new Date().toLocaleString(),
+        cards: cardNames,
+        spreadType: selectedSpread
+    };
+
+    readingHistory.push(historyEntry);
+    updateHistoryDisplay();
+}
+
+function updateHistoryDisplay() {
+    historyList.innerHTML = '';
+
+    for (let i = 0; i < readingHistory.length; i++) {
+        const entry = readingHistory[i];
+        const entryDiv = document.createElement('div');
+        entryDiv.className = 'history-item';
+
+        entryDiv.innerHTML = `
+            <p><strong>${entry.date}</strong> - ${entry.spreadType}-card spread</p>
+            <p>Cards: ${entry.cards.join(', ')}</p>
+        `;
+
+        historyList.appendChild(entryDiv);
+    }
+
+    historySection.classList.remove('hidden');
+}
+
+document.getElementById('startBtn').addEventListener('click', () => {
+    userName = document.getElementById('username').value.trim();
+
+    if (userName === '') {
+        alert('Please enter your name');
+        return;
+    }
+
+    const formattedName = formatName(userName);
+    greeting.textContent = `Welcome, ${formattedName}. Your fate awaits...`;
+
+    intro.classList.add('hidden');
+    readingSection.classList.remove('hidden');
+});
+
+document.querySelectorAll('.spread-type').forEach(button => {
+    button.addEventListener('click', (e) => {
+        selectedSpread = parseInt(e.target.dataset.cards);
+        document.querySelectorAll('.spread-type').forEach(btn => {
+            btn.style.background = btn === e.target ? '#6a3cc5' : '#8c52ff';
+        });
+    });
+});
+
+drawBtn.addEventListener('click', () => {
+    const cards = drawCards(selectedSpread);
+    displaySpread(cards);
+    drawBtn.classList.add('hidden');
+    resetBtn.classList.remove('hidden');
+});
+
+resetBtn.addEventListener('click', () => {
+    spread.classList.add('hidden');
+    interpretation.classList.add('hidden');
+    historySection.classList.add('hidden');
+    drawBtn.classList.remove('hidden');
+    resetBtn.classList.add('hidden');
+    readingText.innerHTML = '';
 });
