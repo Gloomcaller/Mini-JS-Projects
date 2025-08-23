@@ -73,6 +73,13 @@ document.addEventListener('DOMContentLoaded', function () {
             image: ""
         },
         {
+            name: "Tarot Reader",
+            path: "Tarot Reader/index.html",
+            icon: "assets/icons/tarot.png",
+            description: "Virtual Tarot Reading, do you wish to know your fate?",
+            image: ""
+        },
+        {
             name: "Tic Tac Toe",
             path: "Tic Tac Toe/index.html",
             icon: "assets/icons/tic-tac-toe.png",

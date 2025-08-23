@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #2a003f, #000000);
+    color: #f2e9ff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+}
+
+.hidden {
+    display: none;
+}
+
+#spread {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slot h2 {
+    margin-bottom: 15px;
+}
+
+.card {
+    width: 150px;
+    height: 250px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card .meaning {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .meaning {
+    opacity: 1;
+}
+
+.good {
+    border-color: #a2ffb0;
+}
+
+.bad {
+    border-color: #ff7a7a;
+}
+
+.neutral {
+    border-color: #f7e58a;
+}

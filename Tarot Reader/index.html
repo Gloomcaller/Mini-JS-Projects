@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tarot Reader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tarot Reader</h1>
+        <form id="nameForm">
+            <label for="username">Enter your name:</label>
+            <input type="text" id="username" required>
+            <button type="submit">Begin Reading</button>
+        </form>
+
+        <div id="readingSection" class="hidden">
+            <p id="greeting"></p>
+            <button id="drawBtn">Draw 3 Cards</button>
+            <div id="spread">
+                <div class="slot">
+                    <h2>Love</h2>
+                    <div class="card-slot"></div>
+                </div>
+                <div class="slot">
+                    <h2>Career</h2>
+                    <div class="card-slot"></div>
+                </div>
+                <div class="slot">
+                    <h2>Future</h2>
+                    <div class="card-slot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
