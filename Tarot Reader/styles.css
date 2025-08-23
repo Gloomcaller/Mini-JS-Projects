@@ -63,6 +63,11 @@ button:hover {
     background: #6a3cc5;
 }
 
+button.active {
+    background: #6a3cc5;
+    font-weight: bold;
+}
+
 #spread {
     display: flex;
     justify-content: center;
@@ -89,6 +94,11 @@ button:hover {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card img {

@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <h1>Tarot Reader</h1>
+        <h1>🔮 Tarot Reader 🔮</h1>
 
         <div id="intro">
             <p>Discover what the cards have in store for you.</p>
@@ -26,12 +26,10 @@
             <div class="form-group">
                 <label>Select spread type:</label>
                 <div>
-                    <button class="spread-type" data-cards="3">3-Card Spread</button>
+                    <button class="spread-type active" data-cards="3">3-Card Spread</button>
                     <button class="spread-type" data-cards="5">5-Card Spread</button>
                 </div>
             </div>
-
-            <button id="drawBtn">Draw Cards</button>
 
             <div id="spread" class="hidden"></div>
 
@@ -40,12 +38,12 @@
                 <p id="readingText"></p>
             </div>
 
+            <button id="newReadingBtn" class="hidden">New Reading</button>
+
             <div id="history" class="hidden">
                 <h3>Reading History</h3>
                 <div id="historyList"></div>
             </div>
-
-            <button id="resetBtn" class="hidden">New Reading</button>
         </div>
     </div>
 
