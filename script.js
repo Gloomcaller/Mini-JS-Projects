@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const projects = [
         {
+            name: "BMI CAlculator",
+            path: "BMI Calculator/index.html",
+            icon: "assets/icons/bmi.png",
+            description: "Simple and effective BMI Calculator at your convenience.",
+            image: ""
+        },
+        {
             name: "Breakout",
             path: "Breakout/index.html",
             icon: "assets/icons/breakout.png",
