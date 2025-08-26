@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Duel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎲 Dice Duel 🎲</h1>
+
+        <form id="playerForm">
+            <input type="text" id="player1" placeholder="Player 1 Name" required>
+            <input type="text" id="player2" placeholder="Player 2 Name" required>
+            <button type="submit">Start Game</button>
+        </form>
+
+        <div id="gameArea" class="hidden">
+            <div class="scoreboard">
+                <span id="p1Score">0</span> - <span id="p2Score">0</span>
+            </div>
+
+            <p id="turnInfo"></p>
+
+            <div class="dice-area">
+                <img id="dice1" src="media/dice1.png" alt="Dice 1">
+                <img id="dice2" src="media/dice1.png" alt="Dice 2">
+            </div>
+
+            <button id="rollBtn">Roll Dice</button>
+            <button id="resetBtn">Reset</button>
+
+            <p id="result"></p>
+            <div id="history"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
