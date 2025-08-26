@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+
+        <div id="formSection">
+            <input type="text" id="username" placeholder="Enter your name" required>
+            <input type="number" id="age" placeholder="Age" required>
+            <input type="number" id="height" placeholder="Height (cm)" required>
+            <input type="number" id="weight" placeholder="Weight (kg)" required>
+
+            <select id="activity">
+                <option value="">Select activity level</option>
+                <option value="low">Low (sedentary)</option>
+                <option value="moderate">Moderate (1-3 workouts/week)</option>
+                <option value="high">High (4+ workouts/week)</option>
+            </select>
+
+            <button id="calcBtn">Calculate BMI</button>
+        </div>
+
+        <div id="resultSection" class="hidden">
+            <p id="greeting"></p>
+            <p id="bmiResult"></p>
+            <p id="bmiMessage"></p>
+            <button id="newCalcBtn">New Calculation</button>
+
+            <div id="history" class="hidden">
+                <h3>History</h3>
+                <div id="historyList"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

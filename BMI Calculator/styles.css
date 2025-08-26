@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #f2f2f2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url(./media/gym-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(0, 0, 40, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #4fa6ff;
+}
+
+input,
+select {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #4fa6ff;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+}
+
+select option {
+    color: #003366;
+    background-color: #ffffff;
+}
+
+
+button {
+    background: #4fa6ff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2f7de5;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-good {
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+.result-bad {
+    color: #ff6666;
+    font-weight: bold;
+}
+
+.history-item {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"] {
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    opacity: 1;
+}
