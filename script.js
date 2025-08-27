@@ -38,6 +38,13 @@ document.addEventListener('DOMContentLoaded', function () {
             image: ""
         },
         {
+            name: "Dice Duel",
+            path: "Dice Duel/index.html",
+            icon: "assets/icons/dice-fuel.png",
+            description: "Test your luck against your friend in a duel.",
+            image: ""
+        },
+        {
             name: "Dice Roller",
             path: "Dice Roller/index.html",
             icon: "assets/icons/dice.png",
