@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             name: "Dice Duel",
             path: "Dice Duel/index.html",
-            icon: "assets/icons/dice-fuel.png",
+            icon: "assets/icons/dice-duel.png",
             description: "Test your luck against your friend in a duel.",
             image: ""
         },
