@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             path: "Frogger/index.html",
             icon: "assets/icons/frogger.png",
             description: "A Frogger-style game where you guide a frog across a busy road and river.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Memory",
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             path: "Space Invaders/index.html",
             icon: "assets/icons/space-invaders.png",
             description: "A Space Invaders clone where you shoot moving aliens.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Stopwatch",
