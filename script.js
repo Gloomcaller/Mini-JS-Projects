@@ -149,6 +149,5 @@ document.addEventListener('DOMContentLoaded', function () {
         projectGrid.appendChild(card);
     });
 
-    previewImg.src = "assets/images/default.png";
-    descriptionEl.innerHTML = "<p>Hover over a project to see details</p>";
+    previewImg.src = "assets/preview/temp.png";
 });
