@@ -14,35 +14,35 @@ document.addEventListener('DOMContentLoaded', function () {
             path: "Calculator/index.html",
             icon: "assets/icons/calculator.png",
             description: "A functional calculator that can perform basic arithmetic operations.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Clock",
             path: "Clock/index.html",
             icon: "assets/icons/clock.png",
             description: "A digital and analog clock showing current time with smooth animations.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Connect Four",
             path: "Connect Four/index.html",
             icon: "assets/icons/connect-four.png",
             description: "The classic Connect Four game where you try to line up four discs vertically, horizontally, or diagonally.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Dice Duel",
             path: "Dice Duel/index.html",
             icon: "assets/icons/dice-duel.png",
             description: "Test your luck against your friend in a duel.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Dice Roller",
             path: "Dice Roller/index.html",
             icon: "assets/icons/dice.png",
             description: "Roll virtual dice with animation and see random results, perfect for board games.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Frogger",
@@ -56,14 +56,14 @@ document.addEventListener('DOMContentLoaded', function () {
             path: "Memory/index.html",
             icon: "assets/icons/memory.png",
             description: "A memory card game where you find matching pairs of cards.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Rock Paper Scissors",
             path: "Rock Paper Scissors/index.html",
             icon: "assets/icons/rock-paper-scissors.png",
             description: "Play the classic Rock, Paper, Scissors game against a friend.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Space Invaders",
@@ -77,49 +77,49 @@ document.addEventListener('DOMContentLoaded', function () {
             path: "Stopwatch/index.html",
             icon: "assets/icons/stopwatch.png",
             description: "A stopwatch with start, stop, and lap time functionality.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Tarot Reader",
             path: "Tarot Reader/index.html",
             icon: "assets/icons/tarot.png",
             description: "Virtual Tarot Reading, do you wish to know your fate?",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Tic Tac Toe",
             path: "Tic Tac Toe/index.html",
             icon: "assets/icons/tic-tac-toe.png",
             description: "The classic Tic Tac Toe game where you play against a friend.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Time Calculator",
             path: "Time Calculator/index.html",
             icon: "assets/icons/time-calculator.png",
             description: "A tool to add or subtract time from a given date and time.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Truth or Dare",
             path: "Truth or Dare/index.html",
             icon: "assets/icons/truth-or-dare.png",
             description: "A digital version of the classic party game Truth or Dare.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
-            name: "Wellness CAlculator",
+            name: "Wellness Calculator",
             path: "Wellness Calculator/index.html",
             icon: "assets/icons/wellness.png",
             description: "Simple and effective Wellness Calculator at your convenience.",
-            image: ""
+            image: "assets/preview/temp.png"
         },
         {
             name: "Whack a Mole",
             path: "Whack a Mole/index.html",
             icon: "assets/icons/whack-a-mole.png",
             description: "Test your reflexes by whacking moles as they pop up from holes.",
-            image: ""
+            image: "assets/preview/temp.png"
         }
     ];
 
