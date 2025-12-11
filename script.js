@@ -3,13 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const projects = [
         {
-            name: "BMI CAlculator",
-            path: "BMI Calculator/index.html",
-            icon: "assets/icons/bmi.png",
-            description: "Simple and effective BMI Calculator at your convenience.",
-            image: ""
-        },
-        {
             name: "Breakout",
             path: "Breakout/index.html",
             icon: "assets/icons/breakout.png",
@@ -112,6 +105,13 @@ document.addEventListener('DOMContentLoaded', function () {
             path: "Truth or Dare/index.html",
             icon: "assets/icons/truth-or-dare.png",
             description: "A digital version of the classic party game Truth or Dare.",
+            image: ""
+        },
+        {
+            name: "Wellness CAlculator",
+            path: "Wellness Calculator/index.html",
+            icon: "assets/icons/wellness.png",
+            description: "Simple and effective Wellness Calculator at your convenience.",
             image: ""
         },
         {
