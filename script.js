@@ -123,31 +123,100 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
-    const projectGrid = document.querySelector('.project-grid');
+    const projectGrid = document.getElementById('project-grid');
+    const searchInput = document.getElementById('search-input');
+    const projectCountSpan = document.getElementById('project-count');
     const previewImg = document.getElementById('project-preview-img');
     const descriptionEl = document.getElementById('project-description');
 
-    projects.forEach(project => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
-        card.innerHTML = `
-        <div class="project-icon">
-            <img src="${project.icon}" alt="${project.name} icon" class="custom-icon">
-        </div>
-        <h3>${project.name}</h3>`;
+    let currentProjects = [...projects];
 
-        card.addEventListener('click', () => {
-            window.location.href = project.path;
+    function updateProjectCount() {
+        const count = currentProjects.length;
+        projectCountSpan.textContent = `${count} project${count !== 1 ? 's' : ''}`;
+    }
+
+    function filterProjects(searchTerm) {
+        const term = searchTerm.toLowerCase().trim();
+        if (!term) {
+            currentProjects = [...projects];
+        } else {
+            currentProjects = projects.filter(project =>
+                project.name.toLowerCase().includes(term) ||
+                project.description.toLowerCase().includes(term)
+            );
+        }
+        renderProjects();
+        updateProjectCount();
+    }
+
+    function renderProjects() {
+        projectGrid.innerHTML = '';
+
+        currentProjects.forEach((project, index) => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Open ${project.name}`);
+            card.innerHTML = `
+                <div class="project-icon">
+                    <img src="${project.icon}" alt="${project.name} icon" class="custom-icon">
+                </div>
+                <h3>${project.name}</h3>
+            `;
+
+            card.addEventListener('click', () => {
+                window.location.href = project.path;
+            });
+
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = project.path;
+                }
+            });
+
+            card.addEventListener('mouseenter', () => {
+                previewImg.src = project.image;
+                previewImg.alt = `${project.name} Preview`;
+                descriptionEl.innerHTML = `<h3 style="margin-top: 0; color: var(--primary-color);">${project.name}</h3><p>${project.description}</p>`;
+            });
+
+            // Add animation delay for staggered effect
+            card.style.animationDelay = `${index * 0.03}s`;
+
+            projectGrid.appendChild(card);
         });
 
-        card.addEventListener('mouseenter', () => {
-            previewImg.src = project.image;
-            previewImg.alt = `${project.name} Preview`;
-            descriptionEl.innerHTML = `<h3>${project.name}</h3><p>${project.description}</p>`;
-        });
+        // Reset preview if no projects are shown
+        if (currentProjects.length === 0) {
+            previewImg.src = "assets/preview/temp.png";
+            descriptionEl.innerHTML = `<p>No projects found matching your search. Try a different keyword!</p>`;
+        }
+    }
 
-        projectGrid.appendChild(card);
+    // Debounced search for better performance
+    let debounceTimeout;
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            filterProjects(e.target.value);
+        }, 300);
     });
 
+    // Initial render
+    renderProjects();
+    updateProjectCount();
+
+    // Set default preview
     previewImg.src = "assets/preview/temp.png";
+
+    // Keyboard shortcut: Ctrl/Cmd + K to focus search
+    document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            searchInput.focus();
+        }
+    });
 });
