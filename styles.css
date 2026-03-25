@@ -164,6 +164,11 @@ body::before {
     object-fit: contain;
 }
 
+#project-preview-img,
+.description-container {
+    transition: opacity 0.15s ease-in-out;
+}
+
 .right-sidebar {
     position: relative;
 }

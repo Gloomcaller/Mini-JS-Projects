@@ -178,9 +178,41 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             card.addEventListener('mouseenter', () => {
-                previewImg.src = project.image;
-                previewImg.alt = `${project.name} Preview`;
-                descriptionEl.innerHTML = `<h3 style="margin-top: 0; color: var(--primary-color);">${project.name}</h3><p>${project.description}</p>`;
+                // Fade out
+                previewImg.style.opacity = '0';
+                descriptionEl.style.opacity = '0';
+
+                setTimeout(() => {
+                    previewImg.src = project.image;
+                    previewImg.alt = `${project.name} Preview`;
+                    descriptionEl.innerHTML = `<h3 style="margin-top: 0; color: var(--primary-color);">${project.name}</h3><p>${project.description}</p>`;
+
+                    // Fade back in
+                    previewImg.style.opacity = '1';
+                    descriptionEl.style.opacity = '1';
+                }, 200);
+            });
+
+            card.addEventListener('mouseleave', () => {
+                // Fade out
+                previewImg.style.opacity = '0';
+                descriptionEl.style.opacity = '0';
+
+                setTimeout(() => {
+                    previewImg.src = "assets/preview/temp.png";
+                    previewImg.alt = "Project preview";
+                    descriptionEl.innerHTML = `<p>Welcome to my interactive playground of <strong>mini JavaScript projects</strong>. This growing
+            <strong>collection</strong> features small, fun, and practical <strong>web applications</strong>
+            built with plain HTML, CSS, and vanilla JS. Each <strong>project</strong> is self-contained,
+            open-source on <strong>GitHub</strong>, and runs directly in your browser.
+            <strong>Select</strong> any project to <strong>see</strong> previews and
+            <strong>details</strong>. These <strong>JavaScript projects</strong> are perfect for learning,
+            practice, or entertainment — no frameworks, installations, or sign-ups required.</p>`;
+
+                    // Fade back in
+                    previewImg.style.opacity = '1';
+                    descriptionEl.style.opacity = '1';
+                }, 200);
             });
 
             // Add animation delay for staggered effect
