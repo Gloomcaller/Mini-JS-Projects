@@ -66,7 +66,7 @@ function render() {
         b += `<td>${row.label}</td>`;
         for (let i = 0; i < MAX; i++) {
             const hidden = i >= n ? ' class="hidden-col"' : '';
-            b += `<td${hidden}><input type="number" inputmode="numeric" data-p="${i}" data-k="${row.key}" value="${state[i][row.key] || 0}"></td>`;
+            b += `<td${hidden}><input type="number" inputmode="numeric" onfocus="this.select()" data-p="${i}" data-k="${row.key}" value="${state[i][row.key] || 0}"></td>`;
         }
         b += '</tr>';
     }
