@@ -66,7 +66,7 @@ function render() {
         b += `<td>${row.label}</td>`;
         for (let i = 0; i < MAX; i++) {
             const hidden = i >= n ? ' class="hidden-col"' : '';
-            b += `<td${hidden}><input type="number" inputmode="numeric" onfocus="this.select()" data-p="${i}" data-k="${row.key}" value="${state[i][row.key] || 0}"></td>`;
+            b += `<td${hidden}><input type="text" inputmode="numeric" onfocus="this.select()" data-p="${i}" data-k="${row.key}" value="${state[i][row.key] || 0}"></td>`;
         }
         b += '</tr>';
     }
@@ -89,7 +89,7 @@ function render() {
         save(); render();
     });
 
-    document.querySelectorAll('input[type="number"]').forEach(inp => {
+    document.querySelectorAll('input[inputmode="numeric"]').forEach(inp => {
         inp.addEventListener('input', () => {
             const p = +inp.dataset.p, k = inp.dataset.k;
             state[p][k] = parseInt(inp.value) || 0;
