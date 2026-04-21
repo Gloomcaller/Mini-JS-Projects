@@ -45,6 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
             image: "assets/preview/temp.png"
         },
         {
+            name: "Finspan Scoreboard",
+            path: "Finspan Scoreboard/index.html",
+            icon: "assets/icons/finspan-scoreboard.png",
+            description: "Convinient and simple scoreboard for Finspan.",
+            image: "assets/preview/temp.png"
+        },
+        {
             name: "Frogger",
             path: "Frogger/index.html",
             icon: "assets/icons/frogger.png",
