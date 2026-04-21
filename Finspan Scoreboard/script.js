@@ -13,6 +13,12 @@ const ROWS = [
 ];
 let n;
 
+let saveT;
+function debouncedSave() {
+    clearTimeout(saveT);
+    saveT = setTimeout(save, 600);
+}
+
 // State
 let state = load();
 
@@ -94,8 +100,7 @@ function render() {
         inp.addEventListener('input', () => {
             const p = +inp.dataset.p, k = inp.dataset.k;
             state[p][k] = parseInt(inp.value) || 0;
-            save();
-            // no re-render fix?
+            debouncedSave();
             const cells = document.querySelectorAll('#tfoot td');
             let col = 1;
             for (let i = 0; i < MAX; i++) {
