@@ -11,6 +11,7 @@ const ROWS = [
     { key: 'schools', label: 'Schools (6 points each)' },
     { key: 'consumed', label: 'Consumed fish (1 point each)' },
 ];
+let n;
 
 // State
 let state = load();
@@ -47,7 +48,7 @@ function total(p) {
 }
 
 function render() {
-    const n = visibleCount();
+    n = visibleCount();
 
     // Header
     let h = '<tr>';
@@ -94,9 +95,8 @@ function render() {
             const p = +inp.dataset.p, k = inp.dataset.k;
             state[p][k] = parseInt(inp.value) || 0;
             save();
-            // update only totals row
+            // no re-render fix?
             const cells = document.querySelectorAll('#tfoot td');
-            // cells[0] = label, then player cols
             let col = 1;
             for (let i = 0; i < MAX; i++) {
                 if (i >= n) continue;
