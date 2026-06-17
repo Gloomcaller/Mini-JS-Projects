@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://gloomcaller.github.io/Mini-JS-Projects/sitemap.xml

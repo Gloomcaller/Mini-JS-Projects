@@ -1,0 +1,54 @@
+.footer {
+    background: var(--footer-bg);
+    backdrop-filter: blur(12px);
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    p {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+}
+
+.share-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    span {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: translateY(-2px);
+
+            .share-icon {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.share-icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    opacity: 0.9;
+}
