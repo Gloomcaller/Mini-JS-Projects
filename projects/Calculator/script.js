@@ -32,14 +32,14 @@ function calculate() {
     const operatorMatch = value.match(/(\+{5}|\-{5}|\*{5}|\/{5})/);
     if (operatorMatch) {
         const equalsButton = document.querySelector("#keys button:last-child");
-        equalsButton.style.backgroundImage = "url('media/gif.gif')";
+        equalsButton.style.backgroundImage = "url('media/pedro.gif')";
         equalsButton.style.backgroundSize = "cover";
         equalsButton.textContent = "";
 
         setTimeout(() => {
             equalsButton.style.backgroundImage = "";
             equalsButton.textContent = "=";
-        }, 5000);
+        }, 3180);
     } else {
         try {
             display.value = eval(value);

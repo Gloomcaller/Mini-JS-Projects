@@ -1,7 +1,7 @@
 [
     {
         "name": "Breakout",
-        "path": "Breakout/index.html",
+        "path": "projects/Breakout/index.html",
         "icon": "assets/icons/breakout.png",
         "description": "A classic Breakout game where you control a paddle to bounce a ball and break bricks.",
         "images": [
@@ -10,7 +10,7 @@
     },
     {
         "name": "Calculator",
-        "path": "Calculator/index.html",
+        "path": "projects/Calculator/index.html",
         "icon": "assets/icons/calculator.png",
         "description": "A functional calculator that can perform basic arithmetic operations.",
         "images": [
@@ -19,7 +19,7 @@
     },
     {
         "name": "Clock",
-        "path": "Clock/index.html",
+        "path": "projects/Clock/index.html",
         "icon": "assets/icons/clock.png",
         "description": "A digital and analog clock showing current time with smooth animations.",
         "images": [
@@ -28,7 +28,7 @@
     },
     {
         "name": "Connect Four",
-        "path": "Connect Four/index.html",
+        "path": "projects/Connect Four/index.html",
         "icon": "assets/icons/connect-four.png",
         "description": "The classic Connect Four game where you try to line up four discs vertically, horizontally, or diagonally.",
         "images": [
@@ -37,7 +37,7 @@
     },
     {
         "name": "Dice Duel",
-        "path": "Dice Duel/index.html",
+        "path": "projects/Dice Duel/index.html",
         "icon": "assets/icons/dice-duel.png",
         "description": "Test your luck against your friend in a duel.",
         "images": [
@@ -46,7 +46,7 @@
     },
     {
         "name": "Dice Roller",
-        "path": "Dice Roller/index.html",
+        "path": "projects/Dice Roller/index.html",
         "icon": "assets/icons/dice.png",
         "description": "Roll virtual dice with animation and see random results, perfect for board games.",
         "images": [
@@ -55,7 +55,7 @@
     },
     {
         "name": "Finspan Scoreboard",
-        "path": "Finspan Scoreboard/index.html",
+        "path": "projects/Finspan Scoreboard/index.html",
         "icon": "assets/icons/finspan-scoreboard.png",
         "description": "Convenient and simple scoreboard for Finspan.",
         "images": [
@@ -66,7 +66,7 @@
     },
     {
         "name": "Frogger",
-        "path": "Frogger/index.html",
+        "path": "projects/Frogger/index.html",
         "icon": "assets/icons/frogger.png",
         "description": "A Frogger-style game where you guide a frog across a busy road and river.",
         "images": [
@@ -75,7 +75,7 @@
     },
     {
         "name": "Memory",
-        "path": "Memory/index.html",
+        "path": "projects/Memory/index.html",
         "icon": "assets/icons/memory.png",
         "description": "A memory card game where you find matching pairs of cards.",
         "images": [
@@ -84,7 +84,7 @@
     },
     {
         "name": "Rock Paper Scissors",
-        "path": "Rock Paper Scissors/index.html",
+        "path": "projects/Rock Paper Scissors/index.html",
         "icon": "assets/icons/rock-paper-scissors.png",
         "description": "Play the classic Rock, Paper, Scissors game against a friend.",
         "images": [
@@ -93,7 +93,7 @@
     },
     {
         "name": "Space Invaders",
-        "path": "Space Invaders/index.html",
+        "path": "projects/Space Invaders/index.html",
         "icon": "assets/icons/space-invaders.png",
         "description": "A Space Invaders clone where you shoot moving aliens.",
         "images": [
@@ -102,7 +102,7 @@
     },
     {
         "name": "Stopwatch",
-        "path": "Stopwatch/index.html",
+        "path": "projects/Stopwatch/index.html",
         "icon": "assets/icons/stopwatch.png",
         "description": "A stopwatch with start, stop, and lap time functionality.",
         "images": [
@@ -111,7 +111,7 @@
     },
     {
         "name": "Tarot Reader",
-        "path": "Tarot Reader/index.html",
+        "path": "projects/Tarot Reader/index.html",
         "icon": "assets/icons/tarot.png",
         "description": "Virtual Tarot Reading, do you wish to know your fate?",
         "images": [
@@ -120,7 +120,7 @@
     },
     {
         "name": "Tic Tac Toe",
-        "path": "Tic Tac Toe/index.html",
+        "path": "projects/Tic Tac Toe/index.html",
         "icon": "assets/icons/tic-tac-toe.png",
         "description": "The classic Tic Tac Toe game where you play against a friend.",
         "images": [
@@ -129,7 +129,7 @@
     },
     {
         "name": "Time Calculator",
-        "path": "Time Calculator/index.html",
+        "path": "projects/Time Calculator/index.html",
         "icon": "assets/icons/time-calculator.png",
         "description": "A tool to add or subtract time from a given date and time.",
         "images": [
@@ -138,7 +138,7 @@
     },
     {
         "name": "Truth or Dare",
-        "path": "Truth or Dare/index.html",
+        "path": "projects/Truth or Dare/index.html",
         "icon": "assets/icons/truth-or-dare.png",
         "description": "A digital version of the classic party game Truth or Dare.",
         "images": [
@@ -147,7 +147,7 @@
     },
     {
         "name": "Wellness Calculator",
-        "path": "Wellness Calculator/index.html",
+        "path": "projects/Wellness Calculator/index.html",
         "icon": "assets/icons/wellness.png",
         "description": "Simple and effective Wellness Calculator at your convenience.",
         "images": [
@@ -156,7 +156,7 @@
     },
     {
         "name": "Whack a Mole",
-        "path": "Whack a Mole/index.html",
+        "path": "projects/Whack a Mole/index.html",
         "icon": "assets/icons/whack-a-mole.png",
         "description": "Test your reflexes by whacking moles as they pop up from holes.",
         "images": [

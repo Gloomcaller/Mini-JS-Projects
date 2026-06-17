@@ -1,6 +1,13 @@
+// Responsive — Tablet & Mobile Breakpoints
+
+// Tablets — hide sidebars, stack search
 @media (max-width: 1024px) {
     .sidebar {
-        flex: 0 0 260px;
+        display: none;
+    }
+
+    .main-content {
+        padding: 0;
     }
 
     .project-grid {
@@ -11,8 +18,21 @@
         gap: 0.75rem;
         padding: 0.75rem;
     }
+
+    .search-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .project-count {
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+    }
 }
 
+// Phones — smaller cards, mobile background, stacked footer
 @media (max-width: 768px) {
     body {
         background-image: url('../assets/main/background-mobile.svg');
@@ -41,10 +61,6 @@
         padding: 0.75rem;
     }
 
-    .sidebar {
-        display: none;
-    }
-
     .main-content {
         padding: 0;
     }
@@ -63,17 +79,22 @@
     }
 
     .project-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 1rem;
     }
 
-    .custom-icon {
-        width: 40px;
-        height: 40px;
+    .project-card {
+        height: 160px;
+        padding: 1rem;
+
+        h3 {
+            font-size: 0.9rem;
+        }
     }
 
-    .project-card h3 {
-        font-size: 1rem;
+    .custom-icon {
+        width: 36px;
+        height: 36px;
     }
 
     .footer {
@@ -90,21 +111,5 @@
     .share-icon {
         width: 20px;
         height: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .project-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 0.75rem;
-    }
-
-    .custom-icon {
-        width: 36px;
-        height: 36px;
-    }
-
-    .project-card h3 {
-        font-size: 0.9rem;
     }
 }

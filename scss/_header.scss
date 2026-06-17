@@ -1,3 +1,5 @@
+// Header — Title, GitHub & Home Buttons
+
 .header {
     background: var(--header-bg);
     backdrop-filter: blur(12px);
@@ -24,6 +26,7 @@
     }
 }
 
+// Circular icon buttons (GitHub, Home)
 .icon-btn {
     position: relative;
     display: inline-flex;
@@ -52,6 +55,7 @@
     height: 24px;
 }
 
+// Hover tooltip below icon buttons
 .tooltip {
     position: absolute;
     bottom: -30px;
