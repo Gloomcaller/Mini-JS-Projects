@@ -6,26 +6,26 @@ Built for learning, tinkering, and having a bit of fun.
 
 ## All Projects
 
-| # | Project | Description |
-|---|---------|-------------|
-| 1 | [Breakout](Breakout/) | A classic Breakout game where you control a paddle to bounce a ball and break bricks. |
-| 2 | [Calculator](Calculator/) | A functional calculator that can perform basic arithmetic operations. |
-| 3 | [Clock](Clock/) | A digital and analog clock showing current time with smooth animations. |
-| 4 | [Connect Four](Connect%20Four/) | The classic Connect Four game — line up four discs vertically, horizontally, or diagonally. |
-| 5 | [Dice Duel](Dice%20Duel/) | Test your luck against a friend in a head-to-head dice duel. |
-| 6 | [Dice Roller](Dice%20Roller/) | Roll virtual dice with animation and see random results, perfect for board games. |
-| 7 | [Finspan Scoreboard](Finspan%20Scoreboard/) | Convenient and simple scoreboard for the Finspan board game. |
-| 8 | [Frogger](Frogger/) | A Frogger-style game where you guide a frog across a busy road and river. |
-| 9 | [Memory](Memory/) | A memory card game where you find matching pairs of cards. |
-| 10 | [Rock Paper Scissors](Rock%20Paper%20Scissors/) | Play the classic Rock, Paper, Scissors game against a friend. |
-| 11 | [Space Invaders](Space%20Invaders/) | A Space Invaders clone where you shoot waves of moving aliens. |
-| 12 | [Stopwatch](Stopwatch/) | A stopwatch with start, stop, and lap time functionality. |
-| 13 | [Tarot Reader](Tarot%20Reader/) | Virtual Tarot Reading — do you wish to know your fate? |
-| 14 | [Tic Tac Toe](Tic%20Tac%20Toe/) | The classic Tic Tac Toe game, play against a friend. |
-| 15 | [Time Calculator](Time%20Calculator/) | A tool to add or subtract time from a given date and time. |
-| 16 | [Truth or Dare](Truth%20or%20Dare/) | A digital version of the classic party game Truth or Dare. |
-| 17 | [Wellness Calculator](Wellness%20Calculator/) | Simple and effective wellness calculator at your convenience. |
-| 18 | [Whack a Mole](Whack%20a%20Mole/) | Test your reflexes by whacking moles as they pop up from holes. |
+| Project | Description |
+|---------|-------------|
+| [Breakout](Breakout/) | A classic Breakout game where you control a paddle to bounce a ball and break bricks. |
+| [Calculator](Calculator/) | A functional calculator that can perform basic arithmetic operations. |
+| [Clock](Clock/) | A digital and analog clock showing current time with smooth animations. |
+| [Connect Four](Connect%20Four/) | The classic Connect Four game — line up four discs vertically, horizontally, or diagonally. |
+| [Dice Duel](Dice%20Duel/) | Test your luck against a friend in a head-to-head dice duel. |
+| [Dice Roller](Dice%20Roller/) | Roll virtual dice with animation and see random results, perfect for board games. |
+| [Finspan Scoreboard](Finspan%20Scoreboard/) | Convenient and simple scoreboard for the Finspan board game. |
+| [Frogger](Frogger/) | A Frogger-style game where you guide a frog across a busy road and river. |
+| [Memory](Memory/) | A memory card game where you find matching pairs of cards. |
+| [Rock Paper Scissors](Rock%20Paper%20Scissors/) | Play the classic Rock, Paper, Scissors game against a friend. |
+| [Space Invaders](Space%20Invaders/) | A Space Invaders clone where you shoot waves of moving aliens. |
+| [Stopwatch](Stopwatch/) | A stopwatch with start, stop, and lap time functionality. |
+| [Tarot Reader](Tarot%20Reader/) | Virtual Tarot Reading — do you wish to know your fate? |
+| [Tic Tac Toe](Tic%20Tac%20Toe/) | The classic Tic Tac Toe game, play against a friend. |
+| [Time Calculator](Time%20Calculator/) | A tool to add or subtract time from a given date and time. |
+| [Truth or Dare](Truth%20or%20Dare/) | A digital version of the classic party game Truth or Dare. |
+| [Wellness Calculator](Wellness%20Calculator/) | Simple and effective wellness calculator at your convenience. |
+| [Whack a Mole](Whack%20a%20Mole/) | Test your reflexes by whacking moles as they pop up from holes. |
 
 ## Features
 
