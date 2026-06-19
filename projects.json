@@ -18,28 +18,10 @@
         ]
     },
     {
-        "name": "Clock",
-        "path": "projects/Clock/index.html",
-        "icon": "assets/icons/clock.png",
-        "description": "A digital and analog clock showing current time with smooth animations.",
-        "images": [
-            "assets/preview/temp.png"
-        ]
-    },
-    {
         "name": "Connect Four",
         "path": "projects/Connect Four/index.html",
         "icon": "assets/icons/connect-four.png",
         "description": "The classic Connect Four game where you try to line up four discs vertically, horizontally, or diagonally.",
-        "images": [
-            "assets/preview/temp.png"
-        ]
-    },
-    {
-        "name": "Dice Duel",
-        "path": "projects/Dice Duel/index.html",
-        "icon": "assets/icons/dice-duel.png",
-        "description": "Test your luck against your friend in a duel.",
         "images": [
             "assets/preview/temp.png"
         ]
