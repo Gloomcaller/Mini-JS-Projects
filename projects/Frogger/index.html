@@ -3,22 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="media/favicon32.png">
+    <link rel="stylesheet" href="styles.css">
     <title>Frogger</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
 
-    <h3>Seconds left: <span id="time-left">20</span></h3>
-    <h3>Result: <span id="result"></span></h3>
+    <div class="stats-bar">
+        <div class="stat">
+            <span class="stat-label">Time</span>
+            <span id="time-left" class="stat-value">20</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Result</span>
+            <span id="result" class="stat-value"></span>
+        </div>
+    </div>
 
     <div class="controls">
         <button id="start-button">Start</button>
         <button id="pause-button">Pause</button>
     </div>
 
-
     <div class="grid">
+        <!-- Row 1: End zone -->
         <div></div>
         <div></div>
         <div></div>
@@ -28,6 +38,7 @@
         <div></div>
         <div></div>
         <div></div>
+        <!-- Row 2: Empty -->
         <div></div>
         <div></div>
         <div></div>
@@ -37,6 +48,67 @@
         <div></div>
         <div></div>
         <div></div>
+        <!-- Row 3: Trucks left (pattern t1..t5 repeated) -->
+        <div class="truck-left t1"></div>
+        <div class="truck-left t2"></div>
+        <div class="truck-left t3"></div>
+        <div class="truck-left t4"></div>
+        <div class="truck-left t5"></div>
+        <div class="truck-left t1"></div>
+        <div class="truck-left t2"></div>
+        <div class="truck-left t3"></div>
+        <div class="truck-left t4"></div>
+        <!-- Row 4: Trucks right (mirrored pattern) -->
+        <div class="truck-right t5"></div>
+        <div class="truck-right t1"></div>
+        <div class="truck-right t2"></div>
+        <div class="truck-right t3"></div>
+        <div class="truck-right t4"></div>
+        <div class="truck-right t5"></div>
+        <div class="truck-right t1"></div>
+        <div class="truck-right t2"></div>
+        <div class="truck-right t3"></div>
+        <!-- Row 5: Empty -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- Row 6: Cars left (pattern c1..c5 repeated) -->
+        <div class="car-left c1"></div>
+        <div class="car-left c2"></div>
+        <div class="car-left c3"></div>
+        <div class="car-left c4"></div>
+        <div class="car-left c5"></div>
+        <div class="car-left c1"></div>
+        <div class="car-left c2"></div>
+        <div class="car-left c3"></div>
+        <div class="car-left c4"></div>
+        <!-- Row 7: Cars right (mirrored pattern) -->
+        <div class="car-right c5"></div>
+        <div class="car-right c1"></div>
+        <div class="car-right c2"></div>
+        <div class="car-right c3"></div>
+        <div class="car-right c4"></div>
+        <div class="car-right c5"></div>
+        <div class="car-right c1"></div>
+        <div class="car-right c2"></div>
+        <div class="car-right c3"></div>
+        <!-- Row 8: Empty -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- Row 9: Logs left -->
         <div class="log-left l1"></div>
         <div class="log-left l2"></div>
         <div class="log-left l3"></div>
@@ -46,6 +118,7 @@
         <div class="log-left l2"></div>
         <div class="log-left l3"></div>
         <div class="log-left l4"></div>
+        <!-- Row 10: Logs right -->
         <div class="log-right l5"></div>
         <div class="log-right l1"></div>
         <div class="log-right l2"></div>
@@ -55,6 +128,7 @@
         <div class="log-right l1"></div>
         <div class="log-right l2"></div>
         <div class="log-right l3"></div>
+        <!-- Row 11: Empty -->
         <div></div>
         <div></div>
         <div></div>
@@ -64,42 +138,31 @@
         <div></div>
         <div></div>
         <div></div>
-        <div class="car-left c1"></div>
-        <div class="car-left c2"></div>
-        <div class="car-left c3"></div>
-        <div class="car-left c1"></div>
-        <div class="car-left c2"></div>
-        <div class="car-left c3"></div>
-        <div class="car-left c1"></div>
-        <div class="car-left c2"></div>
-        <div class="car-left c3"></div>
-        <div class="car-right c1"></div>
-        <div class="car-right c2"></div>
-        <div class="car-right c3"></div>
-        <div class="car-right c1"></div>
-        <div class="car-right c2"></div>
-        <div class="car-right c3"></div>
-        <div class="car-right c1"></div>
-        <div class="car-right c2"></div>
-        <div class="car-right c3"></div>
+        <!-- Row 12: Start -->
         <div></div>
         <div></div>
         <div></div>
         <div></div>
+        <div class="starting-block" id="frog-cell">
+            <img src="media/favicon32.png" alt="frog" id="frog-img">
+        </div>
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="starting-block frog"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    </div>
+
+    <p class="desktop-hint">Use arrow keys to move</p>
+
+    <div class="d-pad">
+        <div class="d-row">
+            <button id="btn-up">▲</button>
+        </div>
+        <div class="d-row">
+            <button id="btn-left">◄</button>
+            <button id="btn-down">▼</button>
+            <button id="btn-right">►</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
