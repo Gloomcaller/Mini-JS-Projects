@@ -197,10 +197,12 @@ body::before {
 }
 
 #preview-images-container,
-#preview-images-container img {
+#preview-images-container img,
+#popup-img {
   -moz-user-select: none;
        user-select: none;
   -webkit-user-select: none;
+  pointer-events: auto;
 }
 
 .right-sidebar {

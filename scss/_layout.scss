@@ -49,11 +49,13 @@
     }
 }
 
-// Prevent text/image selection on previews
+// Prevent selection/drag on preview images
 #preview-images-container,
-#preview-images-container img {
+#preview-images-container img,
+#popup-img {
     user-select: none;
     -webkit-user-select: none;
+    pointer-events: auto; // ensure clicks still work
 }
 
 .right-sidebar {
