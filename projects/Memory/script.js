@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalPairsDisplay = document.getElementById('total-pairs');
     const resetBtn = document.getElementById('reset-btn');
     const winMessage = document.getElementById('win-message');
-    const playAgainBtn = document.getElementById('play-again-btn');
     const movesCount = document.getElementById('moves-count');
 
     let cardsChosen = [];
@@ -94,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     resetBtn.addEventListener('click', resetGame);
-    playAgainBtn.addEventListener('click', resetGame);
 
     createBoard();
 });

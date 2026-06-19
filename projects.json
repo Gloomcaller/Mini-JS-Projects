@@ -14,7 +14,7 @@
         "icon": "assets/icons/calculator.png",
         "description": "A functional calculator that can perform basic arithmetic operations.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/calculator1.png"
         ]
     },
     {
@@ -52,7 +52,8 @@
         "icon": "assets/icons/frogger.png",
         "description": "A Frogger-style game where you guide a frog across a busy road and river.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/frogger1.png",
+            "assets/preview/frogger2.png"
         ]
     },
     {
@@ -61,7 +62,8 @@
         "icon": "assets/icons/memory.png",
         "description": "A memory card game where you find matching pairs of cards.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/memory1.png",
+            "assets/preview/memory2.png"
         ]
     },
     {
@@ -106,7 +108,7 @@
         "icon": "assets/icons/tic-tac-toe.png",
         "description": "The classic Tic Tac Toe game where you play against a friend.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/tictactoe1.png"
         ]
     },
     {
@@ -115,7 +117,7 @@
         "icon": "assets/icons/time-calculator.png",
         "description": "A tool to add or subtract time from a given date and time.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/timecalc1.png"
         ]
     },
     {
