@@ -1,6 +1,6 @@
-# Mini JS Projects
+# Mini Web Projects
 
-18 bite-sized browser games and tools — all built with HTML, SCSS, and vanilla JavaScript.  
+16 bite-sized browser games and tools — all built with HTML, SCSS, and vanilla JavaScript.  
 No frameworks, no sign-ups, no installs. Just click and play.  
 Built for learning, tinkering, and having a bit of fun.
 
@@ -10,9 +10,7 @@ Built for learning, tinkering, and having a bit of fun.
 |---------|-------------|
 | [Breakout](projects/Breakout/) | A classic Breakout game where you control a paddle to bounce a ball and break bricks. |
 | [Calculator](projects/Calculator/) | A functional calculator that can perform basic arithmetic operations. |
-| [Clock](projects/Clock/) | A digital and analog clock showing current time with smooth animations. |
 | [Connect Four](projects/Connect%20Four/) | The classic Connect Four game — line up four discs vertically, horizontally, or diagonally. |
-| [Dice Duel](projects/Dice%20Duel/) | Test your luck against a friend in a head-to-head dice duel. |
 | [Dice Roller](projects/Dice%20Roller/) | Roll virtual dice with animation and see random results, perfect for board games. |
 | [Finspan Scoreboard](projects/Finspan%20Scoreboard/) | Convenient and simple scoreboard for the Finspan board game. |
 | [Frogger](projects/Frogger/) | A Frogger-style game where you guide a frog across a busy road and river. |
@@ -37,13 +35,13 @@ Built for learning, tinkering, and having a bit of fun.
 
 ## Website
 
-**[gloomcaller.github.io/Mini-JS-Projects](https://gloomcaller.github.io/Mini-JS-Projects/)**
+**[gloomcaller.github.io/Mini-Web-Projects](https://gloomcaller.github.io/Mini-Web-Projects/)**
 
 ## Installation
 
 ### Just play
 1. Clone the repo:  
-   `git clone https://github.com/Gloomcaller/Mini-JS-Projects.git`
+   `git clone https://github.com/Gloomcaller/Mini-Web-Projects.git`
 2. Open the root `index.html` to browse all projects, or dive into any folder and open its `index.html`.
 
 ### Tinker with the code
