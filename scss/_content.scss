@@ -1,5 +1,4 @@
-// Content — Search, Grid, Cards
-
+// Content 
 .main-content {
     flex: 1;
     padding: 0 1rem;
@@ -94,6 +93,12 @@
         color: var(--primary-color);
         word-break: break-word;
     }
+}
+
+.project-card.selected {
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
+    transform: scale(0.95);
 }
 
 .project-icon {

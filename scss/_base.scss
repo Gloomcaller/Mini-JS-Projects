@@ -56,10 +56,10 @@ body {
 ::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
     border-radius: 10px;
+}
 
-    &:hover {
-        background: var(--accent-color);
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 }
 
 // Utility

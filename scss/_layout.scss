@@ -49,11 +49,11 @@
     }
 }
 
-// Shared fade transition
-#project-preview-img,
-.description-container,
-#preview-images-container {
-    transition: opacity 0.15s ease-in-out;
+// Prevent text/image selection on previews
+#preview-images-container,
+#preview-images-container img {
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .right-sidebar {
@@ -69,12 +69,6 @@
     box-shadow: var(--shadow);
     position: sticky;
     top: 90px;
-    transition: all 0.3s;
-
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
 
     h3 {
         color: var(--secondary-color);
@@ -88,4 +82,32 @@
         line-height: 1.6;
         color: var(--dark-color);
     }
+}
+
+// Image popup overlay
+.preview-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.preview-popup.active {
+    display: flex;
+}
+
+.preview-popup img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }

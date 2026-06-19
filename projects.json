@@ -5,7 +5,8 @@
         "icon": "assets/icons/breakout.png",
         "description": "A classic Breakout game where you control a paddle to bounce a ball and break bricks.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     },
     {
@@ -23,7 +24,8 @@
         "icon": "assets/icons/connect-four.png",
         "description": "The classic Connect Four game where you try to line up four discs vertically, horizontally, or diagonally.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     },
     {
@@ -32,7 +34,8 @@
         "icon": "assets/icons/dice.png",
         "description": "Roll virtual dice with animation and see random results, perfect for board games.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     },
     {
@@ -72,7 +75,8 @@
         "icon": "assets/icons/rock-paper-scissors.png",
         "description": "Play the classic Rock, Paper, Scissors game against a friend.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     },
     {
@@ -81,7 +85,8 @@
         "icon": "assets/icons/space-invaders.png",
         "description": "A Space Invaders clone where you shoot moving aliens.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     },
     {
@@ -99,7 +104,8 @@
         "icon": "assets/icons/tarot.png",
         "description": "Virtual Tarot Reading, do you wish to know your fate?",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     },
     {
@@ -126,7 +132,8 @@
         "icon": "assets/icons/truth-or-dare.png",
         "description": "A digital version of the classic party game Truth or Dare.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     },
     {
@@ -135,7 +142,8 @@
         "icon": "assets/icons/wellness.png",
         "description": "Simple and effective Wellness Calculator at your convenience.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     },
     {
@@ -144,7 +152,8 @@
         "icon": "assets/icons/whack-a-mole.png",
         "description": "Test your reflexes by whacking moles as they pop up from holes.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/temp1.png",
+            "assets/preview/temp2.png"
         ]
     }
 ]
