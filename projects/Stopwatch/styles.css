@@ -1,111 +1,144 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #556A6F;
-    background-image: url("./media/stopwatch-bg.png");
-    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e;
+    background-image: url("./media/background.jpg");
     background-size: cover;
-}
-
-#myH1 {
-    font-size: xx-large;
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
-}
-
-#container {
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    border: 5px solid black;
-    border-radius: 50px;
-    padding: 20px;
-    background-color: wheat;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.stopwatch-container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    margin: 0 0 30px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 2px;
 }
 
 #display {
-    font-size: xx-large;
+    font-size: 4rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: black;
-    text-shadow: 2px 2px 2px gray;
-    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 16px;
+    letter-spacing: 4px;
+}
+
+#controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
 
 #controls button {
-    font-size: larger;
+    font-size: 1.2rem;
     font-weight: bold;
-    padding: 10px 20px;
-    margin: 5px;
-    min-width: 125px;
+    padding: 14px 30px;
+    min-width: 140px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     color: white;
-    transition: background-color 0.5s ease;
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
+}
+
+#controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 #startBtn {
-    background-color: green;
+    background-color: #27ae60;
 }
 
 #startBtn:hover {
-    background-color: darkgreen;
+    background-color: #1e8449;
 }
 
 #stopBtn {
-    background-color: red;
+    background-color: #e74c3c;
 }
 
 #stopBtn:hover {
-    background-color: darkred;
+    background-color: #c0392b;
 }
 
 #resetBtn {
-    background-color: orange;
+    background-color: #e67e22;
 }
 
 #resetBtn:hover {
-    background-color: darkorange;
+    background-color: #d35400;
 }
 
-@media (max-width: 600px) {
-    #myH1 {
-        font-size: large;
+@media (max-width: 768px) {
+    .stopwatch-container {
+        padding: 35px 25px;
+    }
+
+    h1 {
+        font-size: 2rem;
     }
 
     #display {
-        font-size: large;
+        font-size: 2.8rem;
+        padding: 15px 25px;
     }
 
     #controls button {
-        font-size: medium;
-        padding: 8px 15px;
-        min-width: 100px;
-    }
-
-    #container {
-        padding: 15px;
+        font-size: 1rem;
+        padding: 12px 20px;
+        min-width: 110px;
     }
 }
 
-@media (min-width: 1200px) {
-    #myH1 {
-        font-size: xxx-large;
+@media (max-width: 480px) {
+    .stopwatch-container {
+        padding: 25px 15px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
     }
 
     #display {
-        font-size: xxx-large;
+        font-size: 2rem;
+        padding: 12px 20px;
+        margin-bottom: 25px;
+    }
+
+    #controls {
+        flex-direction: column;
+        gap: 10px;
     }
 
     #controls button {
-        font-size: x-large;
-        padding: 12px 25px;
-        min-width: 150px;
-    }
-
-    #container {
-        padding: 30px;
+        font-size: 1rem;
+        padding: 12px;
+        min-width: 100%;
     }
 }

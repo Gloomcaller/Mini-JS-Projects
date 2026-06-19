@@ -90,7 +90,7 @@
         "icon": "assets/icons/stopwatch.png",
         "description": "A stopwatch with start, stop, and lap time functionality.",
         "images": [
-            "assets/preview/temp.png"
+            "assets/preview/stopwatch1.png"
         ]
     },
     {
