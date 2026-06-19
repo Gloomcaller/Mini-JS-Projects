@@ -1,34 +1,30 @@
 const display = document.getElementById("display");
+const pedroAudio = new Audio("media/pedro pedro.mp3");
+
+let lastClickTime = 0;
 
 function appendToDisplay(input) {
-    const lastChar = display.value.slice(-1);
-    if (["+", "-", "*", "/"].includes(lastChar) && ["+", "-", "*", "/"].includes(input)) {
-        return;
-    }
-    display.value += input;
-}
+    const now = Date.now();
+    if (now - lastClickTime < 100) return;
+    lastClickTime = now;
 
-function appendToDisplay(input) {
+    // Clear error state
     if (display.value === "Error") display.value = "";
     display.value += input;
 }
 
 function clearDisplay() {
-    display.value = "";
-}
+    const now = Date.now();
+    if (now - lastClickTime < 100) return;
+    lastClickTime = now;
 
-function calculate() {
-    try {
-        const result = Function('"use strict";return (' + display.value + ')')();
-        display.value = result;
-    } catch (error) {
-        display.value = "Error";
-    }
+    display.value = "";
 }
 
 function calculate() {
     const value = display.value;
 
+    // Pedro
     const operatorMatch = value.match(/(\+{5}|\-{5}|\*{5}|\/{5})/);
     if (operatorMatch) {
         const equalsButton = document.querySelector("#keys button:last-child");
@@ -36,15 +32,23 @@ function calculate() {
         equalsButton.style.backgroundSize = "cover";
         equalsButton.textContent = "";
 
+        pedroAudio.currentTime = 0;
+        pedroAudio.play();
+
+        display.value = "Pedro";
+
         setTimeout(() => {
             equalsButton.style.backgroundImage = "";
             equalsButton.textContent = "=";
         }, 3180);
-    } else {
-        try {
-            display.value = eval(value);
-        } catch (error) {
-            display.value = "Error";
-        }
+
+        return;
+    }
+
+    // Normal calculation
+    try {
+        display.value = Function('"use strict";return (' + value + ')')();
+    } catch (error) {
+        display.value = "Error";
     }
 }
