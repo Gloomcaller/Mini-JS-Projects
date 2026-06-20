@@ -24,8 +24,8 @@
         "icon": "assets/icons/connect-four.png",
         "description": "The classic Connect Four game where you try to line up four discs vertically, horizontally, or diagonally.",
         "images": [
-            "assets/preview/temp1.png",
-            "assets/preview/temp2.png"
+            "assets/preview/connectfour1.png",
+            "assets/preview/connectfour2.png"
         ]
     },
     {

@@ -1,70 +1,84 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Connect Four</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="media/favicon32.png">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" charset="utf-8"></script>
+    <title>Connect Four</title>
 </head>
 
 <body>
-    <h3>The current Player is: Player <span id="current-player">1</span></h3>
-    <h3 id="result"></h3>
+    <div class="game-container">
+        <h1>Connect Four</h1>
 
-    <div id="scoreboard">
-        <span>Player 1 Wins: <span id="p1-wins">0</span></span>
-        <span>Player 2 Wins: <span id="p2-wins">0</span></span>
+        <div class="scoreboard">
+            <div class="score p1">
+                <span class="score-label">Player 1</span>
+                <span class="score-value" id="p1-wins">0</span>
+            </div>
+            <div class="score p2">
+                <span class="score-label">Player 2</span>
+                <span class="score-value" id="p2-wins">0</span>
+            </div>
+        </div>
+
+        <div class="turn-indicator">
+            Current turn: <span id="current-player">Player 1</span>
+        </div>
+
+        <div id="result"></div>
+
+        <div class="grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <button id="reset-button">Reset Game</button>
     </div>
 
-    <div class="grid">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <button id="reset-button">Reset Game</button>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
