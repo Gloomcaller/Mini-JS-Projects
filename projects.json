@@ -5,8 +5,7 @@
         "icon": "assets/icons/breakout.png",
         "description": "A classic Breakout game where you control a paddle to bounce a ball and break bricks.",
         "images": [
-            "assets/preview/temp1.png",
-            "assets/preview/temp2.png"
+            "assets/preview/breakout1.png"
         ]
     },
     {
