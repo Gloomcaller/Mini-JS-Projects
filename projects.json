@@ -15,7 +15,8 @@
         "icon": "assets/icons/calculator.png",
         "description": "A functional calculator that can perform basic arithmetic operations.",
         "images": [
-            "assets/preview/calculator1.png"
+            "assets/preview/calculator1.png",
+            "assets/preview/calculator2.jpg"
         ]
     },
     {
@@ -152,8 +153,8 @@
         "icon": "assets/icons/whack-a-mole.png",
         "description": "Test your reflexes by whacking moles as they pop up from holes.",
         "images": [
-            "assets/preview/temp1.png",
-            "assets/preview/temp2.png"
+            "assets/preview/whackamole1.png",
+            "assets/preview/whackamole2.jpg"
         ]
     }
 ]

@@ -4,24 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="media/favicon32.png">
     <link rel="stylesheet" href="styles.css">
     <title>Whack-a-Mole!</title>
 </head>
 
 <body>
-    <header>
-        <h1>Whack-a-Mole!</h1>
-        <div class="game-info">
-            <div class="score-container">
-                <h2>Score: <span id="score">0</span></h2>
-            </div>
-            <div class="time-container">
-                <h2>Time: <span id="time-left">60</span>s</h2>
-            </div>
-        </div>
-    </header>
+    <div class="game-container">
+        <h1>Whack-a-Mole</h1>
 
-    <main>
+        <div class="stats-bar">
+            <span>Score: <strong id="score">0</strong></span>
+            <span>Time: <strong id="time-left">60</strong>s</span>
+        </div>
+
+        <button id="start-stop-btn">Start</button>
+
         <div class="grid">
             <div class="square" id="1"></div>
             <div class="square" id="2"></div>
@@ -33,13 +31,7 @@
             <div class="square" id="8"></div>
             <div class="square" id="9"></div>
         </div>
-
-        <div id="game-over" class="hidden">
-            <h2>GAME OVER!</h2>
-            <p>Your final score: <span id="final-score">0</span></p>
-            <button id="restart-btn">Play Again</button>
-        </div>
-    </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
