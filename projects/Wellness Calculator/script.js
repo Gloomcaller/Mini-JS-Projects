@@ -1,101 +1,257 @@
-const calcBtn = document.getElementById('calcBtn');
-const newCalcBtn = document.getElementById('newCalcBtn');
-const resultSection = document.getElementById('resultSection');
-const greeting = document.getElementById('greeting');
-const bmiResult = document.getElementById('bmiResult');
-const bmiMessage = document.getElementById('bmiMessage');
-const history = document.getElementById('history');
-const historyList = document.getElementById('historyList');
+document.addEventListener('DOMContentLoaded', () => {
+    // DOM elements
+    const formSection = document.getElementById('formSection');
+    const resultSection = document.getElementById('resultSection');
+    const greeting = document.getElementById('greeting');
+    const metricsContainer = document.getElementById('metrics');
+    const historyList = document.getElementById('historyList');
+    const calcBtn = document.getElementById('calcBtn');
+    const newCalcBtn = document.getElementById('newCalcBtn');
 
-let historyData = [];
+    // State
+    let historyData = [];
 
-function formatName(name) {
-    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-}
-
-function calculateBMI(weight, height) {
-    let bmi = weight / ((height / 100) ** 2);
-    return bmi.toFixed(1);
-}
-
-function getBMIMessage(bmi, age, activity) {
-    let status;
-    if (bmi < 18.5) status = "Underweight";
-    else if (bmi < 25) status = "Normal weight";
-    else if (bmi < 30) status = "Overweight";
-    else status = "Obese";
-
-    if (age < 18) {
-        status += " (Note: BMI ranges differ for teens)";
-    } else if (age > 65) {
-        status += " (Be mindful: seniors may have different health standards)";
-    }
-
-    if (activity === "low" && status !== "Normal weight") {
-        status += " - Consider more activity.";
-    }
-    if (activity === "high" && status === "Overweight") {
-        status += " - Muscle mass may influence this.";
-    }
-
-    return status;
-}
-
-function addToHistory(user, bmi, status) {
-    const entry = {
-        date: new Date().toLocaleString(),
-        user,
-        bmi,
-        status
+    // Activity multipliers
+    const activityMultipliers = {
+        sedentary: 1.2,
+        light: 1.375,
+        moderate: 1.55,
+        active: 1.725,
+        very_active: 1.9
     };
-    historyData.push(entry);
-    updateHistoryDisplay();
-}
 
-function updateHistoryDisplay() {
-    historyList.innerHTML = "";
-    for (let i = 0; i < historyData.length; i++) {
-        const entry = historyData[i];
-        const div = document.createElement('div');
-        div.className = 'history-item';
-        div.innerHTML = `<strong>${entry.date}</strong> - ${entry.user}: BMI ${entry.bmi} (${entry.status})`;
-        historyList.appendChild(div);
-    }
-    history.classList.remove('hidden');
-}
+    // Goal calorie adjustments
+    const goalAdjustments = {
+        lose: -500,
+        maintain: 0,
+        gain: 500
+    };
 
-calcBtn.addEventListener('click', () => {
-    const nameInput = document.getElementById('username').value.trim();
-    const ageInput = parseInt(document.getElementById('age').value);
-    const heightInput = parseFloat(document.getElementById('height').value);
-    const weightInput = parseFloat(document.getElementById('weight').value);
-    const activityInput = document.getElementById('activity').value;
-
-    if (!nameInput || !ageInput || !heightInput || !weightInput || !activityInput) {
-        alert("Please fill all fields");
-        return;
+    // Load history from localStorage
+    function loadHistory() {
+        const stored = localStorage.getItem('wellnessHistory');
+        if (stored) historyData = JSON.parse(stored);
     }
 
-    const user = formatName(nameInput);
-    const bmi = calculateBMI(weightInput, heightInput);
-    const status = getBMIMessage(bmi, ageInput, activityInput);
+    function saveHistory() {
+        localStorage.setItem('wellnessHistory', JSON.stringify(historyData));
+    }
 
-    greeting.textContent = `Hello, ${user}. Here are your results:`;
-    bmiResult.textContent = `Your BMI is ${bmi}`;
-    bmiMessage.textContent = `Category: ${status}`;
+    // Render history list
+    function updateHistoryUI() {
+        historyList.innerHTML = '';
+        if (historyData.length === 0) {
+            historyList.innerHTML = '<p style="opacity:0.6; text-align:center;">No calculations yet.</p>';
+            return;
+        }
 
-    bmiMessage.className = (status.includes("Normal weight")) ? "result-good" : "result-bad";
+        historyData.forEach((entry, index) => {
+            const div = document.createElement('div');
+            div.className = 'history-item';
+            div.innerHTML = `
+                <div>
+                    <strong>${entry.date}</strong> — ${entry.name}
+                    <br>BMI ${entry.bmi} | BMR ${entry.bmr} | Goal ${entry.recommended} kcal
+                </div>
+                <button class="delete-btn" data-index="${index}">✕</button>
+            `;
+            historyList.appendChild(div);
+        });
 
-    resultSection.classList.remove('hidden');
+        // Delete individual entries
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const idx = parseInt(e.target.dataset.index);
+                historyData.splice(idx, 1);
+                saveHistory();
+                updateHistoryUI();
+            });
+        });
+    }
 
-    addToHistory(user, bmi, status);
-});
+    // Calculations
+    function calcBMI(weight, height) {
+        return (weight / ((height / 100) ** 2)).toFixed(1);
+    }
 
-newCalcBtn.addEventListener('click', () => {
-    document.getElementById('username').value = "";
-    document.getElementById('age').value = "";
-    document.getElementById('height').value = "";
-    document.getElementById('weight').value = "";
-    document.getElementById('activity').value = "";
-    resultSection.classList.add('hidden');
+    function getBMICategory(bmi) {
+        if (bmi < 18.5) return 'Underweight';
+        if (bmi < 25) return 'Normal';
+        if (bmi < 30) return 'Overweight';
+        return 'Obese';
+    }
+
+    function calcBMR(weight, height, age, gender) {
+        // Mifflin-St Jeor
+        const base = 10 * weight + 6.25 * height - 5 * age;
+        return gender === 'male' ? base + 5 : base - 161;
+    }
+
+    function calcTDEE(bmr, activity) {
+        return Math.round(bmr * (activityMultipliers[activity] || 1.2));
+    }
+
+    function calcIdealWeightRange(height, gender) {
+        // Devine formula
+        const inches = height / 2.54;
+        const ideal = gender === 'male' ? (50 + 2.3 * (inches - 60)) : (45.5 + 2.3 * (inches - 60));
+        return `${(ideal - 5).toFixed(1)} - ${(ideal + 5).toFixed(1)}`;
+    }
+
+    function calcWaistHipRatio(waist, hip) {
+        if (!waist || !hip) return null;
+        return (waist / hip).toFixed(2);
+    }
+
+    function getBodyFatCategory(bodyfat, gender) {
+        if (!bodyfat) return null;
+        if (gender === 'male') {
+            if (bodyfat < 6) return 'Essential fat';
+            if (bodyfat < 14) return 'Athletic';
+            if (bodyfat < 18) return 'Fitness';
+            if (bodyfat < 25) return 'Average';
+            return 'Obese';
+        } else {
+            if (bodyfat < 14) return 'Essential fat';
+            if (bodyfat < 21) return 'Athletic';
+            if (bodyfat < 25) return 'Fitness';
+            if (bodyfat < 32) return 'Average';
+            return 'Obese';
+        }
+    }
+
+    function calcProtein(weight, goal) {
+        // grams per kg: lose 2.0, maintain 1.6, gain 1.8
+        const factor = { lose: 2.0, maintain: 1.6, gain: 1.8 }[goal] || 1.6;
+        return Math.round(weight * factor);
+    }
+
+    // Build the dashboard from results
+    function displayResults(data) {
+        greeting.textContent = `Hello, ${data.name}. Here's your wellness snapshot:`;
+        metricsContainer.innerHTML = '';
+
+        // Helper to create a metric card
+        function addCard(colorClass, label, value, unit = '') {
+            const card = document.createElement('div');
+            card.className = `metric-card ${colorClass}`;
+            card.innerHTML = `
+                <div class="label">${label}</div>
+                <div class="value">${value}</div>
+                ${unit ? `<div class="unit">${unit}</div>` : ''}
+            `;
+            metricsContainer.appendChild(card);
+        }
+
+        // Add cards with themed colors
+        addCard('blue', 'BMI', data.bmi);
+        addCard('yellow', 'Category', data.bmiCategory);
+        addCard('orange', 'BMR', data.bmr, 'kcal/day');
+        addCard('green', 'TDEE', data.tdee, 'kcal/day');
+        addCard('blue', 'Ideal weight', data.idealWeight, 'kg');
+        if (data.waistHipRatio) {
+            addCard('yellow', 'Waist‑Hip Ratio', data.waistHipRatio);
+        }
+        if (data.bodyFatCategory) {
+            addCard('orange', 'Body Fat', `${data.bodyFat}%`, data.bodyFatCategory);
+        }
+        addCard('green', 'Recommended', data.recommendedCal, 'kcal/day');
+        addCard('blue', 'Protein', data.protein, 'grams/day');
+    }
+
+    // Perform calculation
+    calcBtn.addEventListener('click', () => {
+        const name = document.getElementById('username').value.trim();
+        const age = parseInt(document.getElementById('age').value);
+        const gender = document.getElementById('gender').value;
+        const height = parseFloat(document.getElementById('height').value);
+        const weight = parseFloat(document.getElementById('weight').value);
+        const bodyfat = parseFloat(document.getElementById('bodyfat').value) || null;
+        const waist = parseFloat(document.getElementById('waist').value) || null;
+        const hip = parseFloat(document.getElementById('hip').value) || null;
+        const diet = document.getElementById('diet').value;
+        const activity = document.getElementById('activity').value;
+        const goal = document.getElementById('goal').value;
+
+        if (!name || !age || !gender || !height || !weight || !activity || !goal) {
+            alert('Please fill all required fields (name, age, gender, height, weight, activity, goal).');
+            return;
+        }
+
+        const bmi = calcBMI(weight, height);
+        const bmiCategory = getBMICategory(bmi);
+        const bmr = Math.round(calcBMR(weight, height, age, gender));
+        const tdee = calcTDEE(bmr, activity);
+        const idealWeight = calcIdealWeightRange(height, gender);
+        const waistHipRatio = calcWaistHipRatio(waist, hip);
+        const bodyFatCategory = bodyfat ? getBodyFatCategory(bodyfat, gender) : null;
+        const recommendedCal = tdee + (goalAdjustments[goal] || 0);
+        const protein = calcProtein(weight, goal);
+
+        // Save to history
+        const entry = {
+            date: new Date().toLocaleString(),
+            name,
+            bmi,
+            bmiCategory,
+            bmr,
+            tdee,
+            recommended: recommendedCal
+        };
+        historyData.unshift(entry);
+        if (historyData.length > 7) historyData.pop();
+        saveHistory();
+
+        // Display results
+        displayResults({
+            name,
+            bmi,
+            bmiCategory,
+            bmr,
+            tdee,
+            idealWeight,
+            waistHipRatio,
+            bodyFat: bodyfat,
+            bodyFatCategory,
+            recommendedCal,
+            protein,
+            goal
+        });
+
+        formSection.classList.add('hidden');
+        resultSection.classList.remove('hidden');
+        updateHistoryUI();
+
+        // Save user info for convenience
+        saveUserInfo();
+    });
+
+    // New calculation
+    newCalcBtn.addEventListener('click', () => {
+        formSection.classList.remove('hidden');
+        resultSection.classList.add('hidden');
+    });
+
+    // LocalStorage
+    function saveUserInfo() {
+        const fields = ['username', 'age', 'gender', 'height', 'weight', 'bodyfat', 'waist', 'hip', 'diet', 'activity', 'goal'];
+        fields.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) localStorage.setItem(`wellness_${id}`, el.value);
+        });
+    }
+
+    function loadUserInfo() {
+        const fields = ['username', 'age', 'gender', 'height', 'weight', 'bodyfat', 'waist', 'hip', 'diet', 'activity', 'goal'];
+        fields.forEach(id => {
+            const el = document.getElementById(id);
+            const saved = localStorage.getItem(`wellness_${id}`);
+            if (saved && el) el.value = saved;
+        });
+    }
+
+    // Init
+    loadHistory();
+    loadUserInfo();
+    updateHistoryUI();
 });

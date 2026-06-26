@@ -1,3 +1,4 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,93 +6,249 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Body */
 body {
-    color: #f2f2f2;
+    background: #1a1a2e url('./media/background.jpg') center / cover fixed;
+    color: #fff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: url(./media/gym-bg.jpg);
-    background-size: cover;
-    background-position: center;
-    color: white;
 }
 
+/* Main container */
 .container {
     width: 100%;
-    max-width: 500px;
-    background: rgba(0, 0, 40, 0.7);
-    padding: 20px;
-    border-radius: 10px;
+    max-width: 650px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 30px 20px;
     text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Title */
 h1 {
-    margin-bottom: 20px;
-    color: #4fa6ff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3498db, #f1c40f, #e67e22, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
 }
 
+/* Form grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Full‑width single‑column on mobile */
 input,
 select {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #4fa6ff;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 0.95rem;
     text-align: center;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #f1c40f;
+    box-shadow: 0 0 12px rgba(241, 196, 15, 0.3);
 }
 
 select option {
-    color: #003366;
-    background-color: #ffffff;
+    background: #1a1a2e;
+    color: #fff;
 }
 
-
+/* Buttons */
 button {
-    background: #4fa6ff;
+    background: #3498db;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-    color: #000;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 1rem;
     font-weight: bold;
-    transition: background 0.3s;
+    cursor: pointer;
+    margin: 8px 5px;
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
 }
 
 button:hover {
-    background: #2f7de5;
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
 }
 
-.hidden {
-    display: none;
+#calcBtn {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    font-size: 1.1rem;
 }
 
-.result-good {
-    color: #00ffcc;
-    font-weight: bold;
+#newCalcBtn {
+    background: #e67e22;
 }
 
-.result-bad {
-    color: #ff6666;
-    font-weight: bold;
+#newCalcBtn:hover {
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.3);
+}
+
+/* Dashboard grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0 25px;
+}
+
+/* Metric card */
+.metric-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 16px 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.2s;
+}
+
+.metric-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.metric-card .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 6px;
+    color: inherit;
+}
+
+.metric-card .value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.metric-card .unit {
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+/* Color themes */
+.metric-card.blue {
+    border-top: 3px solid #3498db;
+}
+
+.metric-card.blue .value {
+    color: #3498db;
+}
+
+.metric-card.yellow {
+    border-top: 3px solid #f1c40f;
+}
+
+.metric-card.yellow .value {
+    color: #f1c40f;
+}
+
+.metric-card.orange {
+    border-top: 3px solid #e67e22;
+}
+
+.metric-card.orange .value {
+    color: #e67e22;
+}
+
+.metric-card.green {
+    border-top: 3px solid #2ecc71;
+}
+
+.metric-card.green .value {
+    color: #2ecc71;
+}
+
+/* History */
+#history {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#history h3 {
+    color: #f1c40f;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .history-item {
-    background: rgba(255, 255, 255, 0.1);
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 5px;
-    text-align: left;
-    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #f1c40f;
+    padding: 10px 14px;
+    margin: 6px 0;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
 }
 
-input[type="text"],
-input[type="number"] {
-    color: #ffffff;
-    -webkit-text-fill-color: #ffffff;
-    opacity: 1;
+.history-item .delete-btn {
+    background: rgba(231, 76, 60, 0.3);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    margin: 0;
+    flex-shrink: 0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.history-item .delete-btn:hover {
+    background: #e74c3c;
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
 }
