@@ -104,8 +104,8 @@
         "icon": "assets/icons/tarot.png",
         "description": "Virtual Tarot Reading, do you wish to know your fate?",
         "images": [
-            "assets/preview/temp1.png",
-            "assets/preview/temp2.png"
+            "assets/preview/tarotreader1.png",
+            "assets/preview/tarotreader2.png"
         ]
     },
     {
