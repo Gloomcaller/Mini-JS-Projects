@@ -1,134 +1,202 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: white;
-    background-image: url(./media/background.jpg);
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('./media/background.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-#home,
-#game {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: rgba(18, 18, 18, 0.7);
+    min-height: 100vh;
+    color: #fff;
+}
+
+#app {
+    width: 90%;
+    max-width: 800px;
+}
+
+#home-screen,
+#game-screen {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 h1 {
+    margin: 0 0 25px;
     font-size: 3rem;
-    margin-bottom: 20px;
-    cursor: pointer;
+    font-weight: 600;
 }
 
-h1 a {
-    color: white;
-    text-decoration: none;
+#home-screen p {
+    font-size: 1.3rem;
+    opacity: 0.7;
+    margin-bottom: 40px;
 }
 
-h1 a:hover {
-    color: lightgray;
+.mode-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-#subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: gray;
-}
-
-.mode-btn,
-.truth-btn,
-.dare-btn {
-    padding: 15px 30px;
-    margin: 10px;
+.mode-buttons button {
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
     border: none;
-    font-size: x-large;
+    border-radius: 12px;
     cursor: pointer;
-    border-radius: 10px;
-    transition: 0.3s;
-    text-decoration: none;
-    display: inline-block;
+    transition: all 0.2s ease;
+    color: #fff;
+    min-width: 220px;
 }
 
-.mode-btn {
-    background-color: #333;
-    color: white;
-    width: 200px;
-    border: 3px solid white;
+#classic-mode-btn {
+    background: #3498db;
 }
 
-.mode-btn:hover {
-    background-color: #555;
+#classic-mode-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
 }
 
-.mode-btn:nth-child(3):hover {
-    background-color: skyblue;
+#couples-mode-btn {
+    background: #e67e22;
 }
 
-.mode-btn:nth-child(4):hover {
-    background-color: orange;
+#couples-mode-btn:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
 }
 
-#mode-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.truth-btn {
-    background-color: skyblue;
-    color: white;
-}
-
-.dare-btn {
-    background-color: orange;
-    color: white;
-}
-
-.truth-btn,
-.dare-btn {
-    flex: 1;
-    min-width: 100px;
-    max-width: 200px;
+#game-screen h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
 }
 
 #prompt-box {
-    width: 80%;
-    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 30px;
     min-height: 150px;
-    padding: 20px;
-    font-size: 1.5rem;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    word-break: break-word;
 }
 
 .buttons {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
+#truth-btn,
+#dare-btn {
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+    width: 200px;
+    /* Added fixed width for desktop */
+}
+
+#truth-btn {
+    background: #3498db;
+}
+
+#truth-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+#dare-btn {
+    background: #e74c3c;
+}
+
+#dare-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+}
+
+#reset-btn,
+#back-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 5px;
+    /* Added margin for spacing */
+}
+
+#reset-btn:hover,
+#back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 500px) {
+
+    #home-screen,
+    #game-screen {
+        padding: 25px 15px;
     }
 
-    .mode-btn {
-        width: 150px;
+    h1 {
+        font-size: 1.8rem;
     }
 
     #prompt-box {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        padding: 20px;
     }
 
     .buttons {
         flex-direction: column;
+        align-items: center;
+    }
+
+    #truth-btn,
+    #dare-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #reset-btn,
+    #back-btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px 0;
     }
 }

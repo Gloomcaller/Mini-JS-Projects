@@ -4,16 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="media/favicon32.png">
     <link rel="stylesheet" href="styles.css">
     <title>Truth or Dare</title>
 </head>
 
 <body>
-    <div id="home">
-        <h1>Truth or Dare</h1>
-        <p id="subtitle">No skips on this site!</p>
-        <a href="classic.html" class="mode-btn">Classic Mode</a>
-        <a href="couples.html" class="mode-btn">Couples Mode</a>
+    <div id="app">
+        <div id="home-screen">
+            <h1>Truth or Dare</h1>
+            <p>No skips on this site!</p>
+            <div class="mode-buttons">
+                <button id="classic-mode-btn">Classic Mode</button>
+                <button id="couples-mode-btn">Couples Mode</button>
+            </div>
+        </div>
+
+        <div id="game-screen" class="hidden">
+            <h1 id="game-title">Truth or Dare</h1>
+            <div id="prompt-box"></div>
+            <div class="buttons">
+                <button id="truth-btn">Truth</button>
+                <button id="dare-btn">Dare</button>
+            </div>
+            <button id="reset-btn">Reset Prompts</button>
+            <button id="back-btn">Back to Menu</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
