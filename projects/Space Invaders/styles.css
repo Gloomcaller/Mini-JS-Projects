@@ -1,63 +1,213 @@
+/* ==============================
+   Space Invaders – Dark Theme
+   ============================== */
+
+/* Body – fullscreen, no scroll */
 body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a2e url('./media/background.jpg') center / cover fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+    position: fixed;
+    inset: 0;
+}
+
+/* Main container */
+.game-container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 18px 15px;
     text-align: center;
-    padding-top: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 95%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.results {
+h1 {
+    margin: 0 0 8px;
     font-size: 2rem;
-    margin-bottom: 15px;
+    font-weight: 600;
 }
 
+/* Score */
+.stats-bar {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.stats-bar strong {
+    color: #e67e22;
+    font-size: 1.5rem;
+}
+
+/* Board + side buttons */
+.game-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Side buttons (desktop) */
+.side-btn {
+    width: 55px;
+    height: 85px;
+    font-size: 28px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.15s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.side-btn:active {
+    background: #e67e22;
+    transform: scale(0.9);
+}
+
+/* Grid */
 .grid {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    background: #0f0f23;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
     width: 600px;
     height: 600px;
-    border: solid 3px white;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    background-color: #111;
 }
 
 .grid div {
-    width: 40px;
-    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.invader {
-    background-color: purple;
-    border-radius: 8px;
-    box-shadow: 0 0 10px magenta;
+/* Start / Reset */
+.game-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
 }
 
-.shooter {
-    background-color: limegreen;
-    box-shadow: 0 0 10px greenyellow;
-}
-
-.laser {
-    background-color: orange;
-    box-shadow: 0 0 5px gold;
-}
-
-.boom {
-    background-color: red;
-    box-shadow: 0 0 10px orange;
-}
-
-#resetBtn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #444;
-    color: white;
+.game-controls button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    color: #fff;
+    transition: 0.2s;
 }
 
-#resetBtn:hover {
-    background-color: #666;
+#start-btn {
+    background: #27ae60;
+}
+
+#start-btn:hover {
+    background: #1e8449;
+    transform: translateY(-2px);
+}
+
+#reset-btn {
+    background: #e67e22;
+}
+
+#reset-btn:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+}
+
+/* Mobile buttons – left/right at edges */
+.mobile-btns {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.mobile-btns button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.15s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-btns button:active {
+    background: #e67e22;
+    transform: scale(0.9);
+}
+
+/* Game over overlay */
+.game-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px 40px;
+    border-radius: 16px;
+    border: 2px solid #e67e22;
+    z-index: 100;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.game-message h2 {
+    color: #e67e22;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Phone: hide side buttons, show mobile controls */
+@media (max-width: 550px) {
+    .side-btn {
+        display: none;
+    }
+
+    .mobile-btns {
+        display: flex;
+    }
+
+    .game-container {
+        padding: 12px 6px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
 }

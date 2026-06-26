@@ -85,8 +85,8 @@
         "icon": "assets/icons/space-invaders.png",
         "description": "A Space Invaders clone where you shoot moving aliens.",
         "images": [
-            "assets/preview/temp1.png",
-            "assets/preview/temp2.png"
+            "assets/preview/spaceinvaders1.png",
+            "assets/preview/spaceinvaders2.jpg"
         ]
     },
     {
