@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Vojislav Beli">
     <meta name="keywords"
-        content="JavaScript projects, mini JavaScript games, interactive web tools, vanilla JS projects, coding practice, free JavaScript projects, web development, HTML CSS JavaScript, learn JavaScript, fun coding projects">
+        content="JavaScript projects, mini web games, interactive web tools, vanilla JS projects, coding practice, free web projects, web development, HTML CSS JavaScript, learn JavaScript, fun coding projects">
     <meta name="description"
-        content="Free mini JavaScript projects and games collection. Play interactive tools like Dice Roller, Tic Tac Toe, Memory, Stopwatch, Calculator. Learn JavaScript with fun projects from Gloomcaller's GitHub. No signups required.">
-    <title>Mini JS Projects | Interactive Games & Tools Collection</title>
-    <meta property="og:title" content="Mini JS Projects - Interactive Games & Tools">
+        content="Free mini web projects and games collection. Play interactive tools like Dice Roller, Tic Tac Toe, Memory, Stopwatch, Calculator. Learn JavaScript with fun projects from Gloomcaller's GitHub. No signups required.">
+    <title>Mini Web Projects | Interactive Games & Tools Collection</title>
+    <meta property="og:title" content="Mini Web Projects - Interactive Games & Tools">
     <meta property="og:description"
-        content="Play free interactive JavaScript games like Dice Roller, Tic Tac Toe, Memory, and more. No installs needed.">
+        content="Play free interactive web games like Dice Roller, Tic Tac Toe, Memory, and more. No installs needed.">
     <meta property="og:image" content="./assets/icons/favicon.png">
-    <meta property="og:url" content="https://gloomcaller.github.io/Mini-JS-Projects/">
+    <meta property="og:url" content="https://gloomcaller.github.io/Mini-Web-Projects/">
     <meta name="twitter:card" content="summary">
     <meta name="theme-color" content="#2c3e50">
 
@@ -31,7 +31,7 @@
                 <img src="./assets/icons/github.png" alt="GitHub" class="icon-img">
                 <span class="tooltip">GitHub</span>
             </a>
-            <h1>Mini JS Projects</h1>
+            <h1>Mini Web Projects</h1>
             <a href="index.html" class="icon-btn" aria-label="Home Page">
                 <img src="./assets/icons/home.png" alt="Home" class="icon-img">
                 <span class="tooltip">Home</span>
@@ -41,7 +41,7 @@
         <div class="main-layout">
             <aside class="sidebar left-sidebar">
                 <div class="preview-container">
-                    <img src="./assets/preview/temp.png" alt="Project preview" id="project-preview-img">
+                    <img src="./assets/preview/temp1.png" alt="Project preview" id="project-preview-img">
                     <div id="preview-images-container"></div>
                 </div>
             </aside>
@@ -50,7 +50,7 @@
                 <div class="content-header">
                     <div class="search-section">
                         <input type="text" id="search-input" placeholder="Search projects..." class="search-bar">
-                        <span class="project-count" id="project-count">17 projects</span>
+                        <span class="project-count" id="project-count">16 projects</span>
                     </div>
                 </div>
                 <div class="project-grid" id="project-grid"></div>
@@ -58,39 +58,43 @@
 
             <aside class="sidebar right-sidebar">
                 <div class="description-container" id="project-description">
-                    <p>Welcome to my interactive playground of <strong>mini JavaScript projects</strong>. This growing
+                    <p>Welcome to my interactive playground of <strong>mini web projects</strong>. This growing
                         <strong>collection</strong> features small, fun, and practical <strong>web applications</strong>
                         built with plain HTML, CSS, and vanilla JS. Each <strong>project</strong> is self-contained,
                         open-source on <strong>GitHub</strong>, and runs directly in your browser.
                         <strong>Select</strong> any project to <strong>see</strong> previews and
-                        <strong>details</strong>. These <strong>JavaScript projects</strong> are perfect for learning,
-                        practice, or entertainment — no frameworks, installations, or sign-ups required.
+                        <strong>details</strong>. These <strong>web projects</strong> are perfect for learning,
+                        practice, or entertainment. No frameworks, installations, or sign-ups required.
                     </p>
                 </div>
             </aside>
         </div>
 
         <footer class="footer">
-            <p>Created by <strong>© Vojislav Beli</strong> | <span id="year"></span> Mini JS Projects</p>
+            <p>Created by <strong>© Vojislav Beli</strong> | <span id="year"></span> Mini Web Projects</p>
             <div class="share-container">
                 <span>Share:</span>
-                <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20collection%20of%20mini%20JavaScript%20projects!&url=https://gloomcaller.github.io/Mini-JS-Projects/"
+                <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20collection%20of%20mini%20web%20projects!&url=https://gloomcaller.github.io/Mini-Web-Projects/"
                     target="_blank" aria-label="Share on X">
                     <img src="./assets/icons/x.png" alt="X" class="share-icon">
                 </a>
                 <a href="https://www.instagram.com/Gloomcaller/" target="_blank" aria-label="Share on Instagram">
                     <img src="./assets/icons/instagram.png" alt="Instagram" class="share-icon">
                 </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://gloomcaller.github.io/Mini-JS-Projects/"
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://gloomcaller.github.io/Mini-Web-Projects/"
                     target="_blank" aria-label="Share on LinkedIn">
                     <img src="./assets/icons/linkedin.png" alt="LinkedIn" class="share-icon">
                 </a>
-                <a href="https://wa.me/?text=Check%20out%20these%20JavaScript%20projects!%20https://gloomcaller.github.io/Mini-JS-Projects/"
+                <a href="https://wa.me/?text=Check%20out%20these%20web%20projects!%20https://gloomcaller.github.io/Mini-Web-Projects/"
                     target="_blank" aria-label="Share on WhatsApp">
                     <img src="./assets/icons/whatsapp.png" alt="WhatsApp" class="share-icon">
                 </a>
             </div>
         </footer>
+    </div>
+
+    <div class="preview-popup" id="preview-popup">
+        <img src="" alt="Preview" id="popup-img" draggable="false">
     </div>
 
     <script src="script.js"></script>

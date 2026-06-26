@@ -1,9 +1,13 @@
+// Base — Reset, Body, Utilities
+
+// Global reset
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+// Full-page background with gradient overlay
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -16,6 +20,7 @@ body {
     background-repeat: no-repeat;
     position: relative;
 
+    // Gradient overlay for depth
     &::before {
         content: '';
         position: fixed;
@@ -29,6 +34,7 @@ body {
     }
 }
 
+// Main wrapper sits above the overlay
 .app-container {
     min-height: 100vh;
     display: flex;
@@ -37,7 +43,7 @@ body {
     z-index: 1;
 }
 
-// Scrollbar
+// Custom scrollbar
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -50,13 +56,25 @@ body {
 ::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
     border-radius: 10px;
-
-    &:hover {
-        background: var(--accent-color);
-    }
 }
 
-// Utilities
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+// Utility
 .hidden {
     display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

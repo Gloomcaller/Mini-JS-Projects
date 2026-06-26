@@ -1,0 +1,259 @@
+/* Body & Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e;
+    background-image: url("./media/background.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Stats Bar */
+.stats-bar {
+    display: flex;
+    gap: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 20px 50px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 15px;
+}
+
+.controls button {
+    padding: 14px 36px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+#start-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#start-button:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+}
+
+#pause-button {
+    background-color: #f44336;
+    color: white;
+}
+
+#pause-button:hover {
+    background-color: #c62828;
+    transform: translateY(-2px);
+}
+
+/* Game Grid */
+.grid {
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    background-color: #0f0f23;
+    height: 480px;
+    width: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 6px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.grid div {
+    height: 40px;
+    width: 40px;
+}
+
+/* Tiles */
+.ending-block {
+    background-color: #e74c3c;
+}
+
+.starting-block {
+    background-color: #2c3e50;
+}
+
+#frog-cell {
+    background-color: #2c3e50;
+}
+
+#frog-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Logs – safe (l1‑l3) and dangerous (l4‑l5) */
+.l1,
+.l2,
+.l3 {
+    background-color: #8B4513;
+    /* brown – safe */
+}
+
+.l4,
+.l5 {
+    background-color: #87CEEB;
+    /* blue water – deadly */
+}
+
+/* Cars – safe (c1‑c3) are road coloured, dangerous (c4‑c5) are vehicles */
+.c1,
+.c2,
+.c3 {
+    background-color: #444;
+    /* dark road – safe */
+}
+
+.c4 {
+    background-color: #e74c3c;
+    /* red car – deadly */
+}
+
+.c5 {
+    background-color: #f1c40f;
+    /* yellow car – deadly */
+}
+
+/* Trucks – safe (t1‑t3) road, dangerous (t4‑t5) vehicles */
+.t1,
+.t2,
+.t3 {
+    background-color: #444;
+    /* road – safe */
+}
+
+.t4 {
+    background-color: #8e44ad;
+    /* purple truck – deadly */
+}
+
+.t5 {
+    background-color: #e67e22;
+    /* orange truck – deadly */
+}
+
+.desktop-hint {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+/* D-Pad */
+.d-pad {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.d-row {
+    display: flex;
+    gap: 5px;
+}
+
+.d-pad button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.d-pad button:active {
+    background-color: #e67e22;
+    transform: scale(0.9);
+}
+
+@media (max-width: 768px) {
+    .d-pad {
+        display: flex;
+    }
+
+    .desktop-hint {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Reduce overall spacing to prevent D‑pad cutoff */
+    body {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .stats-bar {
+        gap: 20px;
+        padding: 10px 15px;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .controls button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .grid {
+        height: 360px;
+        width: 270px;
+    }
+
+    .grid div {
+        height: 30px;
+        width: 30px;
+    }
+
+    /* Smaller D‑pad buttons for tight screens */
+    .d-pad button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}

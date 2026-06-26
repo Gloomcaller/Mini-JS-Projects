@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="media/favicon32.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Breakout!</title>
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>Breakout</h1>
+
+        <div class="stats-bar">
+            <span>Score: <strong id="score">0</strong></span>
+        </div>
+
+        <div class="game-area">
+            <button id="btn-left" class="d-pad-btn left-btn">◄</button>
+            <div class="game-board" id="game-board"></div>
+            <button id="btn-right" class="d-pad-btn right-btn">►</button>
+        </div>
+
+        <div class="game-controls">
+            <button id="start-btn">Start</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+        <div class="mobile-controls">
+            <button id="btn-left-mob">◄</button>
+            <button id="btn-right-mob">►</button>
+        </div>
+
+        <div class="game-message hidden" id="game-message">
+            <h2 id="message-text"></h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

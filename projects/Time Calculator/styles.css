@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #556A6F;
+    background-image: url(./media/time-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+#container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 650px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+#time-display {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    border: 3px solid white;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#time-breakdown {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.input-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.max-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+#controls input {
+    width: 100px;
+    padding: 12px;
+    margin: 8px;
+    font-size: 1.1rem;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+}
+
+#controls button {
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    margin: 10px 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    background-color: orange;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#controls button:hover {
+    background-color: darkorange;
+    transform: translateY(-2px);
+}
+
+#error-message {
+    color: #ff6b6b;
+    font-size: 1rem;
+    margin-top: 15px;
+    min-height: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    #container {
+        padding: 30px;
+        max-width: 500px;
+    }
+
+    #time-display {
+        font-size: 2.4rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #container {
+        padding: 20px;
+        max-width: 320px;
+    }
+
+    #time-display {
+        font-size: 1.8rem;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #controls input {
+        width: 70px;
+        font-size: 1rem;
+    }
+
+    #controls button {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
+}

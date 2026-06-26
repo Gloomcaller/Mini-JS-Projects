@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('./media/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+#app {
+    width: 90%;
+    max-width: 800px;
+}
+
+#home-screen,
+#game-screen {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    margin: 0 0 25px;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#home-screen p {
+    font-size: 1.3rem;
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mode-buttons button {
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+    min-width: 220px;
+}
+
+#classic-mode-btn {
+    background: #3498db;
+}
+
+#classic-mode-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+#couples-mode-btn {
+    background: #e67e22;
+}
+
+#couples-mode-btn:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
+}
+
+#game-screen h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+#prompt-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 30px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+#truth-btn,
+#dare-btn {
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+    width: 200px;
+    /* Added fixed width for desktop */
+}
+
+#truth-btn {
+    background: #3498db;
+}
+
+#truth-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+#dare-btn {
+    background: #e74c3c;
+}
+
+#dare-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+}
+
+#reset-btn,
+#back-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 5px;
+    /* Added margin for spacing */
+}
+
+#reset-btn:hover,
+#back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 500px) {
+
+    #home-screen,
+    #game-screen {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #prompt-box {
+        font-size: 1.1rem;
+        padding: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #truth-btn,
+    #dare-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #reset-btn,
+    #back-btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px 0;
+    }
+}

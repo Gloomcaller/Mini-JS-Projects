@@ -1,0 +1,234 @@
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e;
+    background-image: url('./media/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Main container */
+.game-container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 94%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title */
+h1 {
+    margin: 0 0 10px;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+/* Score */
+.stats-bar {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.stats-bar strong {
+    color: #e67e22;
+    font-size: 1.6rem;
+}
+
+/* Board + side buttons row */
+.game-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Desktop paddle buttons */
+.d-pad-btn {
+    width: 55px;
+    height: 85px;
+    font-size: 28px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.d-pad-btn:active {
+    background: #e67e22;
+    transform: scale(0.9);
+}
+
+/* Game board */
+.game-board {
+    position: relative;
+    background-color: #0f0f23;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 560px;
+    height: 300px;
+}
+
+/* Paddle */
+.user {
+    position: absolute;
+    background-color: #4caf50;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+/* Bricks */
+.block {
+    position: absolute;
+    border-radius: 3px;
+}
+
+/* Ball */
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ff5722;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.6);
+}
+
+/* Start / Reset buttons */
+.game-controls {
+    margin-top: 12px;
+    display: flex;
+    gap: 14px;
+}
+
+.game-controls button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+}
+
+#start-btn {
+    background: #27ae60;
+}
+
+#start-btn:hover {
+    background: #1e8449;
+    transform: translateY(-2px);
+}
+
+#reset-btn {
+    background: #e67e22;
+}
+
+#reset-btn:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+}
+
+/* Mobile paddle buttons */
+.mobile-controls {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.mobile-controls button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.mobile-controls button:active {
+    background: #e67e22;
+    transform: scale(0.9);
+}
+
+/* Win / lose overlay */
+.game-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px 40px;
+    border-radius: 16px;
+    border: 2px solid #e67e22;
+    z-index: 100;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.game-message h2 {
+    color: #e67e22;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}
+
+/* Phone */
+@media (max-width: 550px) {
+    .d-pad-btn {
+        display: none;
+    }
+
+    .mobile-controls {
+        display: flex;
+    }
+
+    .game-container {
+        padding: 12px 6px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+}
