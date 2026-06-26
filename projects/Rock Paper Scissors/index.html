@@ -4,26 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="media/favicon32.png">
     <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 
 <body>
     <div class="game-container">
-        <div class="score-board">
-            <div>Wins: <span id="wins">0</span></div>
-            <div>Draws: <span id="draws">0</span></div>
-            <div>Losses: <span id="losses">0</span></div>
+        <h1>Rock Paper Scissors</h1>
+
+        <div class="scoreboard">
+            <div class="score wins">
+                <span class="score-label">Wins</span>
+                <span class="score-value" id="wins">0</span>
+            </div>
+            <div class="score draws">
+                <span class="score-label">Draws</span>
+                <span class="score-value" id="draws">0</span>
+            </div>
+            <div class="score losses">
+                <span class="score-label">Losses</span>
+                <span class="score-value" id="losses">0</span>
+            </div>
+        </div>
+        <button id="reset-score">Reset Score</button>
+
+        <div class="battle-area">
+            <div class="player-side">
+                <span class="label">You</span>
+                <img id="user-choice-img" src="media/you.png" alt="Your choice">
+                <span id="user-choice-text"></span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="player-side">
+                <span class="label">Computer</span>
+                <img id="computer-choice-img" src="media/computer.png" alt="Computer choice">
+                <span id="computer-choice-text"></span>
+            </div>
         </div>
 
-        <h2>Computer Choice: <span id="computer-choice"></span></h2>
-        <h2>Your Choice: <span id="user-choice"></span></h2>
-        <h2 id="result"></h2>
+        <div id="result"></div>
 
         <div class="choices">
-            <button id="rock">✊ Rock</button>
-            <button id="paper">✋ Paper</button>
-            <button id="scissors">✌️ Scissors</button>
+            <button id="rock">
+                <img src="media/rock.png" alt="Rock">
+                <span>Rock</span>
+            </button>
+            <button id="paper">
+                <img src="media/paper.png" alt="Paper">
+                <span>Paper</span>
+            </button>
+            <button id="scissors">
+                <img src="media/scissors.png" alt="Scissors">
+                <span>Scissors</span>
+            </button>
         </div>
     </div>
 

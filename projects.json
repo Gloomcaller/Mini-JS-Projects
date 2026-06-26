@@ -34,8 +34,7 @@
         "icon": "assets/icons/dice.png",
         "description": "Roll virtual dice with animation and see random results, perfect for board games.",
         "images": [
-            "assets/preview/temp1.png",
-            "assets/preview/temp2.png"
+            "assets/preview/diceroller1.png"
         ]
     },
     {
@@ -75,8 +74,9 @@
         "icon": "assets/icons/rock-paper-scissors.png",
         "description": "Play the classic Rock, Paper, Scissors game against a friend.",
         "images": [
-            "assets/preview/temp1.png",
-            "assets/preview/temp2.png"
+            "assets/preview/rockpaperscissors1.png",
+            "assets/preview/rockpaperscissors2.png",
+            "assets/preview/rockpaperscissors3.jpg"
         ]
     },
     {
